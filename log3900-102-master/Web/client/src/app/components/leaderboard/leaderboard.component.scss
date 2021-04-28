@@ -1,0 +1,56 @@
+.wrapper{
+    background-color: #c2eeee;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 767px;  
+    .mat-card{
+        background-color: #d9f3f2;
+        width: 704px;
+        height: 100%;
+        button:focus, button:active:focus, button.active:focus{
+            outline: none !important;
+            outline-style: none !important;
+        }
+
+        ::ng-deep .mat-tab-body .mat-tab-body-active{
+            overflow: hidden;
+        }
+
+        .image{
+            width: auto;
+            height: 45px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+        background-color: #8b8b8b;
+    }
+}
+
+
+.loading {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  mat-spinner{
+    margin: auto;
+  }
+}
+
+.waiting {
+  overflow: hidden;
+}
+
+::ng-deep.mat-progress-spinner circle, .mat-spinner circle{
+  stroke: #c2eeee;
+} 
+
+button:focus, button:active:focus, button.active:focus{
+  outline: none !important;
+  outline-style: none !important;
+}

@@ -1,0 +1,186 @@
+@import '../../../global-style/colors.scss';
+
+.user-profile-wrapper {
+    float: left;
+    background-color: #c2eeee;
+    width: 1356px;
+    height: 719px;
+    padding-top: 50px;
+    padding-left: 79px;
+    .to-main-menu-button {
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+    .profil{
+        float: left;
+        background-color: #ace6e1;
+        width: 1175px;
+        height: 498px;
+        border-radius: 30px;
+        .banner{
+            border: 2px solid black;
+            float: left;
+            padding-top: 20px;
+            background-color: #d9f3f2;
+            border-radius: 30px;
+            width: 382px;
+            .username{
+                text-align: center;
+            }
+
+            .progress-bar{
+                width: 257px;
+                left: 96px;
+                top: 16px;
+            }
+
+            .experience{
+                padding-left: 175px;
+                padding-top: 20px;
+                padding-bottom: 0px;
+            }
+
+            .level{
+                left: 56px;
+                top: -53px;
+            }
+
+            .avatar-wrapper{
+                text-align: center;
+                .avatar{
+                    width: 150px;
+                    height: 150px;
+                    border: 5px solid black;
+                    border-radius: 50%;
+                }
+
+                .avatar-button {
+                    display: none;
+                    position: absolute;
+                    border-radius: 50%;
+                    left: 242px;
+                    top: 331px;
+                }
+
+                .avatar:hover + .avatar-button,
+                .avatar-button:hover {
+                        display: inline-block;
+                    }
+            }
+
+            .badge-wrapper{
+                text-align: center;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                
+                .badge-image1 {
+                    width: 100px;
+                    height: 100px;
+                    padding-right: 3px;
+                }
+                
+                .badge-button1{
+                    display: none;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 140px;
+                    top: 477px;
+                }
+                
+                .badge-image1:hover + .badge-button1, .badge-button1:hover{
+                    display:inline-block;
+                }
+                .badge-image2 {
+                    width: 100px;
+                    height: 100px;
+                    padding-right: 3px;
+                }
+                
+                .badge-button2{
+                    display: none;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 240px;
+                    top: 477px;
+                }
+
+                .badge-image2:hover + .badge-button2, .badge-button2:hover{
+                    display:inline-block;
+                }
+                
+                .badge-image3 {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .badge-button3{
+                    display: none;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 342px;
+                    top: 477px;
+                }
+
+                .badge-image3:hover + .badge-button3, .badge-button3:hover{
+                    display:inline-block;
+                }
+
+            }
+        }
+
+        .tab{
+            float: right;
+            padding-right: 19px;
+            ::ng-deep .mat-tab-body-content{
+                height: 400px;
+            }
+        }
+    }
+}
+.channel{
+    position: relative;
+    float: right;
+    width: 304px;
+    height: 721px;
+    background-color: #d9f3f2;
+    top: -719px;
+    left: 0px;
+}
+.pannel-detached{
+    position: absolute;
+    top: 50px;
+    right: 254px;
+    background-color:#d9f3f2;
+    width: 50px;
+    height: 400px;
+    .mat-card{
+        background-color: #c2eeee;
+        width: 200px;
+        top:236px;
+        left: 59px;
+        .mat-card-content{
+            .mat-card-text{
+                text-align: center;
+                font-weight: bolder;
+            }
+        }
+    }
+
+}
+
+.mat-mini-fab.mat-primary{
+    background-color: #0055b3;
+}
+
+::ng-deep .mat-progress-bar-fill::after{
+    background-color: #006ee6;
+}
+
+::ng-deep .mat-progress-bar-buffer{
+    background-color: #00254d;
+}
+
+::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background-color: #8b8b8b;
+}

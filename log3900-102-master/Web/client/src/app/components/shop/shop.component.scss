@@ -1,0 +1,30 @@
+.wrapper{
+    overflow-y: hidden;
+    height: 100%;
+    .mat-card-background{
+        overflow-y: hidden;
+        background-color: #c2eeee;
+        .mat-card{
+            background-color: #d9f3f2;
+            margin: 10px;
+            ::ng-deep .mat-tab-body-content{
+                overflow-y:scroll;
+                height: 300px;
+            }
+        }
+
+        .mat-card-item:hover{
+            background-color: #5fc9c5;
+            cursor: pointer;
+        }
+    }
+    ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+        background-color: #8b8b8b;
+    }
+
+    button:focus, button:active:focus, button.active:focus{
+        outline: none !important;
+        outline-style: none !important;
+    }
+
+}

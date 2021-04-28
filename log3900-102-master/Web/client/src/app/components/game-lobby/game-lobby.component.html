@@ -1,0 +1,102 @@
+<div class="game-lobby-wrapper">
+    <mat-card class="mat-card" style="background-color:#c2eeee;">
+        <mat-card-header>
+            <img mat-card-avatar src="assets/icons/image2vector.svg">
+            <mat-card-title><strong>{{name | titlecase}}</strong></mat-card-title>
+            <mat-card-subtitle>{{activeLobby.host}}'s Game</mat-card-subtitle>
+            <button *ngIf="!isWaiting" mat-fab (click)="openTutorialDialog()" matTooltip="Tutorial">
+                <mat-icon>help</mat-icon>
+            </button>
+            <div style="padding-left: 5px;">
+                <button *ngIf="!isWaiting" mat-fab  matTooltip="Mute Music" (click)="toggleMusic()">
+                    <img style="width: 20px; height: 20px;" [src]="musicOn ? 'assets/icons/music.svg': 'assets/icons/music_off.svg'">
+                </button>
+            </div>
+        </mat-card-header>
+        <mat-card-content class="mat-content">
+            <mat-card *ngIf="!isWaiting" class="game-lobby-game-info-wrapper">
+                <mat-card-content>
+                    <div class="game-lobby-game-info">
+                        <h6>Privacy : <b>{{privacy | titlecase}}</b> | Mode: <b>Classic</b></h6>
+                        <mat-divider class="mat-divider"></mat-divider>
+                        <h6>Key: <b>{{shareKey}}</b> </h6>
+                        <mat-divider></mat-divider>
+                        <h6>Difficulty: <b>{{difficulty | titlecase}}</b></h6>
+                        <mat-divider class="mat-divider"></mat-divider>
+                    </div>
+                    <div class="game-lobby-team-wrapper">
+                        <div class="game-lobby-team-A">
+                            <div *ngFor="let player of teamA">
+                                <mat-card class="mat-card">
+                                    <mat-card-header class="header">
+                                        <img mat-card-avatar src="{{player.avatar}}" class="avatar-red">
+                                        <mat-card-title>{{player.name}}</mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content class="mat-card-content">
+                                        <div *ngIf="player.badges.length > 0">
+                                            <img class="player-badges" src={{player.badges[0]}} matTooltip="{{this.badgeNameDictionary.badgeLinkMap.get(player.badges[0])}}">
+                                            <img class="player-badges" src={{player.badges[1]}} matTooltip="{{this.badgeNameDictionary.badgeLinkMap.get(player.badges[1])}}">
+                                            <img class="player-badges" src={{player.badges[2]}} matTooltip="{{this.badgeNameDictionary.badgeLinkMap.get(player.badges[2])}}">
+                                        </div>
+                                        </mat-card-content>
+                                </mat-card>
+                            </div>
+                            <div *ngIf="(shouldAddRobotForA && isHost && teamA[1].isVP)" class="team-A-button-wrapper">
+                                <button class="team-A-button" mat-mini-fab (click)="addRobot('A', true)" matTooltip="Add Robot">+</button>
+                            </div>
+                            <div *ngIf="(!shouldAddRobotForA && isHost && teamA[1].isVP)" class="team-A-button-wrapper">
+                                <button class="team-A-button" mat-mini-fab (click)="removeRobot('A')">-</button>
+                            </div>
+                        </div>
+                        <div class="game-lobby-team-B">
+                            <br>
+                            <div *ngFor="let player of teamB">
+                                <mat-card class="mat-card">
+                                    <mat-card-header>
+                                        <img mat-card-avatar src="{{player.avatar}}" class="avatar-blue">
+                                        <mat-card-title>{{player.name}}</mat-card-title>
+                                    </mat-card-header>
+                                    <mat-card-content class="mat-card-content">
+                                        <div *ngIf="player.badges.length > 0">
+                                            <img class="player-badges" src={{player.badges[0]}} matTooltip="{{this.badgeNameDictionary.badgeLinkMap.get(player.badges[0])}}">
+                                            <img class="player-badges" src={{player.badges[1]}} matTooltip="{{this.badgeNameDictionary.badgeLinkMap.get(player.badges[1])}}">
+                                            <img class="player-badges" src={{player.badges[2]}} matTooltip="{{this.badgeNameDictionary.badgeLinkMap.get(player.badges[2])}}">
+                                        </div>
+                                        </mat-card-content>
+                                </mat-card>
+                            </div>
+                            <div *ngIf="(shouldAddRobotForB && isHost && teamB[1].isVP)" class="team-B-button-wrapper">
+                                <button class="team-B-button" mat-mini-fab (click)="addRobot('B', true)" matTooltip="Add Robot">+</button>
+                            </div>
+                            <div *ngIf="(!shouldAddRobotForB && isHost && teamB[1].isVP)" class="team-B-button-wrapper">
+                                <button class="team-B-button" mat-mini-fab (click)="removeRobot('B')">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+            <div class="game-lobby-game-channel-wrapper">
+                <div class="game-lobby-quit-and-start-wrapper">
+                    <button class="btn btn-warning btn-center" id="quit-button" [mat-dialog-close]="true" (click)="quitLobby()">Quit
+                        Lobby</button>
+                    <button *ngIf="isHost" class="btn btn-warning btn-center" id="start-button" [disabled]="!isReadyToStart" (click)="createMap()">Start Game</button>
+                </div>
+            </div>
+        </mat-card-content>
+        <div class="waiting" *ngIf="isWaiting" style="background-color: #c2eeee;">
+          <mat-card style="background-color: #d9f3f2;">
+            <mat-card-header>
+              <mat-card-title>Starting a Classic Game</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="loading">
+                <mat-spinner></mat-spinner>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+    </mat-card>
+
+</div>
+
+

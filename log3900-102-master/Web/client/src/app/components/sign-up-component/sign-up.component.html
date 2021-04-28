@@ -1,0 +1,71 @@
+<div class="sign-up-form-wrapper">
+    <div class="sign-up-form-header">
+        <h4 class="sign-up-form-title">Sign Up</h4>
+        <br>
+    </div>
+
+    <form class="sign-up-form" [formGroup]="signupForm"> 
+        <mat-form-field appearance="standard" class="sign-up-field">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Ex.John" [formControl]="signupFirstName" required>
+            <mat-icon matSuffix>badge</mat-icon>
+            <mat-hint>{{signupHints.nameHint}}</mat-hint>
+            <mat-error *ngIf="signupFirstName.invalid">{{signupErrors.nonValidFirstnameError}}</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="standard" class="sign-up-field">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Ex.Doe" [formControl]="signupLastName" required>
+            <mat-icon matSuffix>badge</mat-icon>
+            <mat-hint>{{signupHints.nameHint}}</mat-hint>
+            <mat-error *ngIf="signupLastName.invalid">{{signupErrors.nonValidLastnameError}}</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="standard" class="sign-up-field">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Ex.wonderwoman" [formControl]="signupUserName" required>
+            <mat-icon matSuffix>badge</mat-icon>
+            <mat-hint>{{signupHints.usernameHint}}</mat-hint> 
+            <mat-error *ngIf="signupUserName.invalid">{{signupErrors.nonValidUsernameError}}</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="standard" class="sign-up-field">
+            <mat-label >Password</mat-label>
+            <input type="password" matInput placeholder="Ex.abc123" [formControl]="signupInitPassword" required>
+            <mat-icon matSuffix>no_encryption</mat-icon>
+            <mat-hint>{{signupHints.passwordHint}}</mat-hint> 
+            <mat-error *ngIf="signupInitPassword.invalid">{{signupErrors.nonValidPasswordError}}</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field  appearance="standard" class="sign-up-field">
+            <mat-label>Confirm Password</mat-label>
+            <input type="password" matInput placeholder="Ex.abc123" [formControl]="signupConfirmPassword" required>
+            <mat-icon matSuffix>no_encryption</mat-icon>
+            <mat-error *ngIf="signupConfirmPassword.invalid">{{signupErrors.nonValidPasswordError}}</mat-error>
+        </mat-form-field>
+        <br>
+        <br>
+        <div class="sign-up-checkbox">
+            <mat-error *ngIf="!passwordMatch">{{signupErrors.nonMatchPasswordError}}</mat-error>
+            <mat-error *ngIf="fieldEmpty">{{signupErrors.nonEmptyFieldError}}</mat-error>
+            <mat-error *ngIf="hasEmptySpaces">{{signupErrors.nonEmptySpaceError}}</mat-error>
+            <mat-error *ngIf="usernameAlreadyExists">{{signupErrors.usernameAlreadyExistsError}}</mat-error>
+        </div>
+        <br>
+        <div class="sign-up-button">
+            <button class="btn btn-warning btn-center" id="sign-up-button" [disabled]="signupForm.invalid" (click)="onSignUp()">Sign Up</button>
+        </div>
+    </form>
+
+    <div class="avatar-selection-wrapper">
+        <h4 class="avatar-header">Select an avatar !</h4>
+        <div class="avatar-preview-wrapper">
+            <img #previewAvatar src="assets/avatar/avatar_init_homme.png" alt="Avatar preview" class="avatar-preview">
+        </div>
+        <br>
+        <div class="avatar-button-wrapper">
+            <input type="image" src="assets/avatar/avatar_init_homme.png" class="avatar" (click)="changePreviewAvatar('male')">
+            <input type="image" src="assets/avatar/avatar_init_femme.png" class="avatar" (click)="changePreviewAvatar('girl')">
+        </div>
+    </div>
+</div>

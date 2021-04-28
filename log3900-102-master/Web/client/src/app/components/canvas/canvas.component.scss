@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  user-select: none; // So that [Shape] doesn't turn blue
+}
+
+:host {
+  position: relative;
+}
+
+.canvas {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+.grid {
+  pointer-events: none;
+}
+
+svg {
+  position: absolute;
+  top: 0px;
+}

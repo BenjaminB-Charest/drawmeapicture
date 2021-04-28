@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="title">
+        <h4><strong>Submit Your Drawing</strong></h4>
+        <mat-divider></mat-divider>
+    </div>
+    <div>
+        <!-- <h5>Word: <strong class="strong">{{word | titlecase}}</strong></h5> -->
+        <h5><strong>Difficulty: </strong>{{difficulty | titlecase}}</h5>
+        <div *ngFor="let hint of hints">
+            <h5><strong>Hints: </strong>{{hint | titlecase}}</h5>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div *ngIf="isOnAccelerate" class="isOnAccelerate-text-wrapper">
+        <mat-card class="mat-card">
+            <mat-card-content>
+                <h2 class="isOnAccelerate-text">Preview Mode</h2>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="renew-wrapper" *ngIf="!isOnAccelerate">
+        <div class="button">
+            <h4><strong>Edit Word Infos</strong></h4>
+            <button mat-fab color="accent" (click)="onEdit()">
+                <mat-icon>draw</mat-icon>
+            </button>
+        </div>
+        <div class="button">
+            <h4><strong>Refresh Canvas</strong></h4>
+            <button mat-fab color="accent" (click)="onRefresh()">
+                <mat-icon>autorenew</mat-icon>
+            </button>
+        </div>
+        <div class="button">
+            <h4><strong>Submit</strong></h4>
+            <button mat-fab color="accent" (click)="onDone()">
+                <mat-icon>done</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

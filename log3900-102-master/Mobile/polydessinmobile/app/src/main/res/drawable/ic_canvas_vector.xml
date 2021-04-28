@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportHeight="300.0"
+    android:viewportWidth="700.0">
+    <group android:name="Andi">
+
+        <path
+            android:name="one"
+            android:pathData="M 25 0 L 10 40"
+            android:strokeColor="@color/black"
+            android:fillColor="@color/black"
+            android:strokeWidth="2" />
+
+        <path
+            android:name="two"
+            android:pathData="M 25 0  L 40 40"
+            android:strokeColor="@color/black"
+            android:fillColor="@color/black"
+            android:strokeWidth="2" />
+
+        <path
+            android:name="three"
+            android:pathData="M 10 40 L 0 0 "
+            android:strokeColor="@color/black"
+            android:fillColor="@color/black"
+            android:strokeWidth="2" />
+
+        <path
+            android:name="four"
+            android:pathData="M 40 40 L 50 0"
+            android:strokeColor="@color/black"
+            android:fillColor="@color/black"
+            android:strokeWidth="2" />
+    </group>
+</vector>

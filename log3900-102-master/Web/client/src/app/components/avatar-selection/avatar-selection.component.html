@@ -1,0 +1,59 @@
+<div class="avatar-selection-wrapper">
+    <div class="avatar-selection-title-wrapper">
+        <h1 class="avatar-selection-title">Select avatar</h1>
+        <img #previewAvatar class="preview-avatar" src={{avatarURL}}>
+    </div>
+    <div class="avatar-choices-row-1">
+        <input class="avatar-choice" type="image" src="assets/avatar/avatar_init_femme.png"
+            (click)="changePreviewAvatar('girl')" [ngClass]="{'grayScale':!woman}" [disabled]='!woman'>
+        <input class="avatar-choice" type="image" src="assets/avatar/avatar_init_homme.png"
+            (click)="changePreviewAvatar('male')" [ngClass]="{'grayScale':!man}" [disabled]='!man'>
+        <input class="avatar-choice" type="image" src="assets/avatars/cat.svg" (click)="changePreviewAvatar('cat')"
+            [ngClass]="{'grayScale':!cat}" [disabled]='!cat'>
+        <input class="avatar-choice" type="image" src="assets/avatars/dog.svg" (click)="changePreviewAvatar('dog')"
+            [ngClass]="{'grayScale':!dog}" [disabled]='!dog'>
+        <input class="avatar-choice" type="image" src="assets/avatars/fox.svg" (click)="changePreviewAvatar('fox')"
+            [ngClass]="{'grayScale':!fox}" [disabled]='!fox'>
+    </div>
+    <div class="avatar-choices-row-2">
+        <input class="avatar-choice" type="image" src="assets/avatars/panda_bear.svg"
+            (click)="changePreviewAvatar('panda_bear')" [ngClass]="{'grayScale':!panda}" [disabled]='!panda'>
+        <input class="avatar-choice" type="image" src="assets/avatars/flamingo.svg" (click)="changePreviewAvatar('flamingo')"
+            [ngClass]="{'grayScale':!flamingo}" [disabled]='!flamingo'>
+        <input class="avatar-choice" type="image" src="assets/avatars/yak.svg" (click)="changePreviewAvatar('yak')"
+            [ngClass]="{'grayScale':!yak}" [disabled]='!yak'>
+        <input class="avatar-choice" type="image" src="assets/avatars/koala.svg" (click)="changePreviewAvatar('koala')"
+            [ngClass]="{'grayScale':!koala}" [disabled]='!koala'>
+        <input class="avatar-choice" type="image" src="assets/avatars/bee.svg" (click)="changePreviewAvatar('bee')"
+            [ngClass]="{'grayScale':!bee}" [disabled]='!bee'>
+    </div>
+    <div class="avatar-choices-row-3">
+        <input class="avatar-choice" type="image" src="assets/avatars/giraffe.svg" (click)="changePreviewAvatar('giraffe')"
+            [ngClass]="{'grayScale':!giraffe}" [disabled]='!giraffe'>
+        <input class="avatar-choice" type="image" src="assets/avatars/polar_bear.svg"
+            (click)="changePreviewAvatar('polar_bear')" [ngClass]="{'grayScale':!polarBear}" [disabled]='!polarBear'>
+        <input class="avatar-choice" type="image" src="assets/avatars/rhino.svg" (click)="changePreviewAvatar('rhino')"
+            [ngClass]="{'grayScale':!rhino}" [disabled]='!rhino'>
+        <input class="avatar-choice" type="image" src="assets/avatars/monkey.svg" (click)="changePreviewAvatar('monkey')"
+            [ngClass]="{'grayScale':!monkey}" [disabled]='!monkey'>
+        <input class="avatar-choice" type="image" src="assets/avatars/rabbit.svg" (click)="changePreviewAvatar('rabbit')"
+            [ngClass]="{'grayScale':!rabbit}" [disabled]='!rabbit'>
+    </div>
+    <div class="avatar-choices-row-4">
+        <input class="avatar-choice" type="image" src="assets/avatars/lion.svg" (click)="changePreviewAvatar('lion')"
+            [ngClass]="{'grayScale':!lion}" [disabled]='!lion'>
+        <input class="avatar-choice" type="image" src="assets/avatars/raccoon.svg" (click)="changePreviewAvatar('raccoon')"
+            [ngClass]="{'grayScale':!raccoon}" [disabled]='!raccoon'>
+        <input class="avatar-choice" type="image" src="assets/avatars/octopus.svg" (click)="changePreviewAvatar('octopus')"
+            [ngClass]="{'grayScale':!octopus}" [disabled]='!octopus'>
+        <input class="avatar-choice" type="image" src="assets/avatars/leopard.svg" (click)="changePreviewAvatar('leopard')"
+            [ngClass]="{'grayScale':!leopard}" [disabled]='!leopard'>
+        <input class="avatar-choice" type="image" src="assets/avatars/elephant.svg" (click)="changePreviewAvatar('elephant')"
+            [ngClass]="{'grayScale':!elephant}" [disabled]='!elephant'>
+    </div>
+    <div class="confirm-choice-wrapper">
+        <button class="cancel-button" [mat-dialog-close]="true">Cancel</button>
+        <button class="ok-button btn-warning" [mat-dialog-close]="true" (click)="onOK()">OK</button>
+    </div>
+</div>
+

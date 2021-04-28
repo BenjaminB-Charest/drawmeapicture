@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/colorPrimaryLight">
+
+        <ImageView
+            android:id="@+id/player_team_final"
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:background="@color/red_team"/>
+        <ImageView
+            android:id="@+id/player_avatar_final"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/fox"
+            android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:layout_toEndOf="@+id/player_team_final"/>
+        <TextView
+            android:id="@+id/player_username_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="username"
+            android:textSize="20sp"
+            android:layout_toEndOf="@id/player_avatar_final"
+            android:layout_alignTop="@id/player_avatar_final"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"/>
+        <ImageView
+            android:id="@+id/player_badge1_final"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_badge1"
+            android:scaleType="fitXY"
+            android:layout_alignStart="@id/player_username_final"
+            android:layout_below="@id/player_username_final"
+            android:layout_marginEnd="5dp"/>
+        <ImageView
+            android:id="@+id/player_badge2_final"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_badge2"
+            android:scaleType="fitXY"
+            android:layout_toEndOf="@id/player_badge1_final"
+            android:layout_below="@id/player_username_final"
+            android:layout_marginEnd="5dp"/>
+        <ImageView
+            android:id="@+id/player_badge3_final"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_badge3"
+            android:scaleType="fitXY"
+            android:layout_toEndOf="@id/player_badge2_final"
+            android:layout_below="@id/player_username_final"
+            android:layout_marginEnd="5dp"/>
+        <ImageView
+            android:id="@+id/player_position_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/player_score_final"
+            android:layout_alignStart="@id/player_score_final"
+            android:layout_above="@id/player_score_final"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_first"/>
+        <TextView
+            android:id="@+id/player_score_final"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 points"
+            android:textSize="18sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/player_badge1_final"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

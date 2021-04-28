@@ -1,0 +1,74 @@
+<div class="join-lobby-wrapper">
+    <div class="join-lobby-content-wrapper">
+        <mat-card class="mat-card-background">
+            <div style="text-align: end; z-index: 100;">
+                <button mat-icon-button [mat-dialog-close]>
+                    <img style="width: 20px; height: 20px;" src="assets/icons/quit.svg">
+                </button>
+            </div>
+        
+            <mat-card class="mat-card">
+                <mat-card-header class="mat-card-header">
+                    <img mat-card-avatar src="assets/icons/image2vector.svg">
+                    <mat-card-title class="mat-card-title"><strong>Join a Game</strong></mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="mat-card-content" [style.overflow]="'auto'" [style.height.px]="'366'">
+                    <div class="filter-information-wrapper">
+                        <h6>Join a game with key:</h6>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Key</mat-label>
+                            <input matInput [(ngModel)]="id">
+                        </mat-form-field>
+                        <div class="join-game-button-wrapper">
+                            <button class="btn btn-warning btn-center" id="joinButton" (click)="joinPrivateGame()" [disabled]="shouldBeDisabled()"
+                                >Join</button>
+                        </div>
+
+                        <h6>Filter public game by difficulty:</h6>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Diffculty</mat-label>
+                            <mat-select (selectionChange)="onDifficultyChange($event)" placeholder="Difficulty" [(value)]="difficulty">
+                                <mat-option value="easy">easy</mat-option>
+                                <mat-option value="normal">normal</mat-option>
+                                <mat-option value="hard">hard</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div *ngFor="let game of games" class="mat-card-player-wrapper">
+                            <mat-card class="mat-card-player">
+                                <mat-card-header class="mat-card-header-player">
+                                    <mat-card-title>{{game.name | titlecase}}</mat-card-title>
+                                </mat-card-header>
+                                <mat-card-content class="mat-card-content-player">
+                                    <div *ngFor="let player of game.players">
+                                        <div *ngIf="player.team === 'A'" class="team-A">
+                                            <mat-card style="width: 250px; height: 70px; margin-bottom: 20px;">
+                                                <mat-card-header style="padding-top: 0px;">
+                                                    <img mat-card-avatar src={{player.avatar}} class="avatar-A">
+                                                    <mat-card-title>{{player.username}}</mat-card-title>
+                                                </mat-card-header>
+                                            </mat-card>
+                                        </div>
+                                        <div *ngIf="player.team === 'B'" class="team-B">
+                                            <mat-card style="width: 250px; height: 70px; margin-bottom: 20px;">
+                                                <mat-card-header style="padding-top: 0px;">
+                                                    <img mat-card-avatar src={{player.avatar}} class="avatar-B">
+                                                    <mat-card-title>{{player.username}}</mat-card-title>
+                                                </mat-card-header>
+                                            </mat-card>
+                                        </div>
+                                    </div>
+                                    <div class="join-button-wrapper">
+                                        <button class="btn btn-warning btn-center" style="width: 111px;" id="joinGame" value={{game.id}} (click)="joinGame(game.id)"
+                                        >Join</button>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-card>
+    </div>
+</div>
+
+

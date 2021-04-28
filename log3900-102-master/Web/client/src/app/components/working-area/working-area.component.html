@@ -1,0 +1,37 @@
+<div class="wrapper">
+    <div class="sidebar scrollable">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="pannel scrollable">
+        <app-option-pannel></app-option-pannel>
+    </div>
+
+    <div class="workspace">
+        <div class="infobar">
+            <div style="border-radius: 30px; background-color: #ace6e1;">
+                <h4 *ngIf="(!isDrawing && gameMode !== 'wordImagePair')">Word to Guess: {{word}}</h4>
+                <h4 *ngIf="(isDrawing && gameMode !== 'wordImagePair')">Word to Draw: {{word}}</h4>
+                <div style="text-align: center;">
+                    <h4 *ngIf="gameMode === 'wordImagePair'"><strong>Your Word is</strong></h4>
+                    <h4 *ngIf="gameMode === 'wordImagePair'" style="color: #000000;"><strong>→ {{this.wordImagePairService.nameForm.get('name')?.value}} ←</strong></h4>
+                </div>
+                <div class="timer">
+                  <h4>{{timeLeft}}</h4>
+                </div>
+            </div>
+        </div>
+        <app-workspace id="workspace"></app-workspace>
+    </div>
+
+    <div class="pannel scrollable">
+        <app-channel-panel></app-channel-panel>
+    </div>
+    <div class="pannel-detached" *ngIf="isDetached">
+        <mat-card class="mat-card">
+            <mat-card-content class="mat-card-content">
+                <h2 class="mat-card-text">Chat in Window</h2>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

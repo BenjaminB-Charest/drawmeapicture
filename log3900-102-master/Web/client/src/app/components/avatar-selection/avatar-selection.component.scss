@@ -1,0 +1,126 @@
+.avatar-selection-wrapper {
+    background-color: #c2eeee;
+    padding: 50px;
+    .avatar-selection-title-wrapper {
+        display: flex;
+        padding-bottom: 10px;
+        .avatar-selection-title {
+            float: left;
+            font-weight: bolder;
+            padding-bottom: 20px;
+            padding-right: 80px;
+        }
+
+        .preview-avatar {
+            float: right;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid whitesmoke;
+        }
+        .preview-avatar:active{
+            outline: none;
+            border: none;
+        }
+    }
+
+    .avatar-choices-row-1 {
+        .avatar-choice {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            border: 5px solid whitesmoke;
+        }
+        .avatar-choice:active{
+            outline: none;
+            border: none;
+        }
+         .avatar-choice:focus{
+            outline: none;
+            border: none;
+        }
+    }
+
+    .avatar-choices-row-2 {
+        .avatar-choice {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            border: 5px solid whitesmoke;
+        }
+        .avatar-choice:active{
+            outline: none;
+            border: none;
+        }
+         .avatar-choice:focus{
+            outline: none;
+            border: none;
+        }
+    }
+
+    .avatar-choices-row-3 {
+        .avatar-choice {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            border: 5px solid whitesmoke;
+        }
+        .avatar-choice:active{
+            outline: none;
+            border: none;
+        }
+         .avatar-choice:focus{
+            outline: none;
+            border: none;
+        }
+    }
+
+    .avatar-choices-row-4 {
+        .avatar-choice {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            border: 5px solid whitesmoke;
+        }
+        .avatar-choice:active{
+            outline: none;
+            border: none;
+        }
+         .avatar-choice:focus{
+            outline: none;
+            border: none;
+        }
+    }
+
+    .grayScale{
+        -webkit-filter: grayscale(1);
+    }
+
+    .confirm-choice-wrapper {
+        padding-bottom: 10px;
+        float: right;
+        .cancel-button {
+            float: left;
+            width: 80px;
+            height: 30px;
+            margin-right: 20px;
+            border-radius: 20px;
+            border: 0cm;
+        }
+
+        .ok-button {
+            float: right;
+            width: 100px;
+            height: 30px;
+            border-radius: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 0cm;
+        }
+    }
+}
+
+button:focus, button:active:focus, button.active:focus{
+    outline: none !important;
+    outline-style: none !important;
+}

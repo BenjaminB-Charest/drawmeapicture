@@ -1,0 +1,102 @@
+@import "src/global-style/colors.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: $dark-gray;
+  min-width: 500px;
+}
+
+/* Global elements */
+h1 {
+  color: whitesmoke;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+h5 {
+  color: whitesmoke;
+  font-size: 1em;
+}
+
+button:focus {
+  outline:0;
+}
+
+/* Option section */
+.option-selection {
+  display: flex;
+  flex-direction: row;
+
+  .sub-section {
+    margin-bottom: 10px;
+
+    .details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #preview {
+      max-width: 300px;
+      max-height: 250px;
+    }
+  }
+}
+
+.icon {
+  float: right;
+  padding-top: 10px;
+}
+
+.add-tag-button {
+  background-color: $vivid;
+  outline: none;
+  float: right;
+  right: 200px;
+  margin-top: 8px;
+}
+
+/* Buttons section */
+.button-section {
+  margin-top: 10px;
+  text-align: right;
+  background-color:$dark-gray;
+
+  #cancel-button {
+    color: whitesmoke;
+    outline: none;
+
+  }
+
+  .confirm-button {
+    background-color: $vivid;
+    outline: none;
+  }
+}
+
+/* Override Angular Material elements */
+::ng-deep .mat-chip-list-wrapper {
+  max-width: 350px !important;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: whitesmoke !important;
+}
+
+::ng-deep .mat-ripple-element{
+  display: none !important;
+}
+
+::ng-deep .mat-form-field-ripple {
+  background-color: $vivid !important;
+}
+
+::ng-deep .mat-input-element {
+  color: whitesmoke !important;
+  caret-color: whitesmoke !important;
+}
+
+::ng-deep .mat-form-field-underline, .mat-form-field-underline.mat-focused {
+  background-color: whitesmoke !important;
+}

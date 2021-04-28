@@ -1,0 +1,34 @@
+.wrapper{
+    background-color: #c2eeee;
+    padding: 30px;
+    width: 500px;
+    .mat-card{
+        width: 100%;
+        height: 100%;
+        button:focus, button:active:focus, button.active:focus{
+            outline: none !important;
+            outline-style: none !important;
+        }
+
+        .mat-content{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            .left{
+                text-align: center;
+                float: left;
+                padding-left: 8px;
+                padding-right: 67px;
+            }
+
+            .edit{
+                text-align: center;
+                float: left;
+            }
+            .right{
+                text-align: center;
+                float: right;
+                padding-right: 8px;
+            }
+        }
+    }
+}

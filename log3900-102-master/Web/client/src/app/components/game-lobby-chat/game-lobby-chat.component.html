@@ -1,0 +1,11 @@
+<div class="lobby-chat-wrapper">
+        <mat-selection-list [multiple]="false">
+                <div mat-subheader>Private Channels</div>
+                <div *ngFor="let channel of channels">
+                        <mat-list-option (click)="setSelectedChannel(channel)">
+                                <mat-icon mat-list-icon>forum</mat-icon>
+                                <div mat-line>{{channel.name}}</div>
+                        </mat-list-option>
+                </div>
+        </mat-selection-list>
+</div>

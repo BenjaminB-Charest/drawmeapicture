@@ -1,0 +1,53 @@
+
+<h1>Galerie de dessins</h1>
+
+<!-- recherche par tags -->
+<div class="option-section">
+  <div class="sub-section">
+    <h5>Rechercher par étiquette</h5>
+    <form class="info">
+      <mat-form-field>
+        <mat-label class="text">Ajouter une étiquette</mat-label>
+        <input [(ngModel)]="tagName" [ngModelOptions]="{standalone: true}" matInput>
+      </mat-form-field>
+      <button mat-button id="add-tag-button" (click)="addTag(tagName)">Ajouter</button>
+    </form>
+    <mat-chip-list #chipList>
+      <mat-chip *ngFor="let tag of tags" [selectable]="true"
+            [removable]="true" (removed)="removeTag(tag)">
+          {{ tag }}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+</div>
+
+<!-- resultats -->
+<div class="result-section" *ngIf="!this.isLoading">
+  <div class="resultat" *ngIf="this.resultImages.length !== 0">
+    <h5 *ngIf="this.resultImages.length === 1">Résultat</h5>
+    <h5 *ngIf="this.resultImages.length > 1">Résultats</h5>
+    <div class="scroll-container">
+      <mat-grid-list [style.width]="getTableWidth()" cols="{{ this.resultImages.length / 2 }}" rowHeight="150px" gutterSize="5px">
+        <mat-grid-tile class="result" (mouseenter)="this.onMouseEnter(i)" (mouseleave)="this.onMouseLeave()" *ngFor="let image of resultImages; let i = index">
+          <img [ngClass]="{'hovered':i === this.hoveredIndex}" class="thumbnail" [attr.src]="image.serial">
+          <mat-grid-tile-footer>{{ image.title }} ({{ this.formatTagsArray(image.tags) }})</mat-grid-tile-footer>
+          <div class="hover-box" *ngIf="i === this.hoveredIndex">
+            <button mat-button (click)="deleteImage(image._id)">Supprimer</button>
+            <button mat-button id="load-image" (click)="loadImage(image)">Charger</button>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+  <h5 *ngIf="this.resultImages.length === 0">Aucun dessin correspondant</h5>
+</div>
+
+<div class="loading" *ngIf="this.isLoading">
+  <mat-spinner></mat-spinner>
+</div>
+
+  <!-- section boutons de la modale -->
+<div class="button-section">
+  <button mat-button id="cancel-button" (click)="onDialogClose()">Fermer</button>
+</div>

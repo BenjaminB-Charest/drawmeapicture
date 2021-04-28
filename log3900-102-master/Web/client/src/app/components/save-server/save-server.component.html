@@ -1,0 +1,56 @@
+<h1>Sauvegarde en ligne</h1>
+<div class="option-section">
+    <div class="sub-section">
+      <div class="details">
+        <form class="info">
+          <mat-form-field>
+            <mat-label class="text" >Titre</mat-label>
+            <input [(ngModel)]="title" (change)="isValidTitle=checkTitleValidity(title)"
+                    [ngModelOptions]="{standalone: true}" matInput >
+          </mat-form-field>
+          <div class="icon" [matTooltip]="'Le titre doit avoir de 3 à 16 caractères et peut contenir
+          des lettres, des chiffres, des espaces et des tirets (-). Les étiquettes sont optionnelles
+          mais doivent avoir entre 1 et 10 caractères et peuvent contenir des lettres et des chiffres.
+          Les étiquettes du même dessin sont uniques. Maximum 5 étiquettes.'"
+                matTooltipPosition="below">
+            <button mat-button>
+              <img src="./assets/icons/tutorial.svg">
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <div class="sub-section">
+      <h5>Étiquettes</h5>
+      <form class="tag-section">
+        <mat-form-field>
+          <mat-label class="text">Ajouter une étiquette</mat-label>
+          <input [(ngModel)]="tagName" [ngModelOptions]="{standalone: true}" matInput>
+          </mat-form-field>
+        <button mat-button class="add-tag-button" (click)="addTag(tagName)">Ajouter</button>
+      </form>
+      <mat-chip-list>
+        <mat-chip *ngFor="let tag of tags" [selectable]="true"
+            [removable]="true" (removed)="removeTag(tag)">
+          {{ tag }}
+          <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+
+  <div class="sub-section">
+    <h5>Apperçu</h5>
+    <div id="preview">
+      <canvas #mydrawing></canvas>
+      <canvas #proccessingCanas hidden></canvas>
+    </div>
+  </div>
+</div>
+<div class="button-section">
+  <button mat-button id="cancel-button" (click)="onDialogClose()">Annuler</button>
+  <button mat-button *ngIf="!isSaving" class="confirm-button" (click)="saveConfirmation()">Sauvegarder</button>
+  <button mat-button disabled *ngIf="isSaving" class="confirm-button" (click)="saveConfirmation()">Sauvegarder</button>
+</div>
+
+

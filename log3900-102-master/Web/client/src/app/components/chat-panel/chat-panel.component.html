@@ -1,0 +1,32 @@
+<div class="chat-container">
+  <div class="wrapper" #wrapper [scrollTop]="wrapper.scrollHeight" >
+    <div id="history" *ngIf="!showHistory">
+      <a (click)="getHistory()" matTooltip="Show">Show entire chat history...</a>
+    </div>
+    <div class="chat-board" *ngIf="messages.length !== 0">
+      <div class="chat-message" *ngFor="let message of messages">
+        <p style="color: black;">[{{message.timeStamp | date: 'HH:mm:ss'}}] <b>{{ message.senderID }}</b>: {{ message.content }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="chat-form">
+    <mat-form-field *ngIf="!isGuessing" appearance="outline"
+      #autofocus
+      (keyup.enter)="sendMessage()">
+      <input matInput placeholder="Send message" [(ngModel)]="chatContent">
+    </mat-form-field>
+    <mat-form-field *ngIf="isGuessing" appearance="outline"
+      #autofocus
+      (keyup.enter)="sendGuess()">
+      <input  matInput placeholder="Guess word" [(ngModel)]="chatContent">
+    </mat-form-field>
+    <div class="icon">
+      <button *ngIf="isGuessing" mat-button (click)="sendGuess()" [matTooltip]="'Guess'">
+        <mat-icon mat-list-icon>wb_twilight</mat-icon>
+      </button>
+      <button *ngIf="!isGuessing" mat-button (click)="sendMessage()" [matTooltip]="'Send'">
+        <mat-icon mat-list-icon>send</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

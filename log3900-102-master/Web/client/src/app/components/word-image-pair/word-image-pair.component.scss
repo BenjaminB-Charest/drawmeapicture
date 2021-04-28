@@ -1,0 +1,48 @@
+.pair-wrapper{
+    background-color: #c2eeee;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;    
+    width: 800px;
+    .mat-card{
+        background-color: #d9f3f2;
+        ::ng-deep .mat-horizontal-stepper-header{
+            pointer-events: none !important;
+        }
+        .hint-input{
+            width: 600px;
+        }
+
+    }
+}
+
+::ng-deep.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit{
+    background-color: #ace6e1 !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit{
+    background-color: transparent!important;
+    color: #ace6e1;
+    +.mat-step-label{
+        color: #ace6e1;
+    }
+}
+
+::ng-deep.mat-form-field.mat-focused .mat-form-field-label{
+    color: #8b8b8b !important;
+}
+
+::ng-deep.mat-chip.mat-standard-chip{
+    background-color: #ace6e1 !important;
+}
+
+button:focus, button:active:focus, button.active:focus{
+    outline: none !important;
+    outline-style: none !important;
+}
+
+
+
+
+

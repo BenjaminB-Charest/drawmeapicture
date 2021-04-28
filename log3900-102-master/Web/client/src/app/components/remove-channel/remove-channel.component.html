@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <div style="text-align: end; z-index: 100;">
+        <button mat-icon-button [mat-dialog-close] [disabled]="this.channelPanelService.shouldQuitButtonDisableSubject.getValue()" (click)="onExit()">
+            <img style="width: 20px; height: 20px;" src="assets/icons/quit.svg">
+        </button>
+    </div>
+
+    <mat-card class="mat-card">
+        <mat-card-header>
+            <img mat-card-avatar src="assets/icons/image2vector.svg">
+            <mat-card-title><strong>Please select a channel to delete</strong></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-selection-list [multiple]="false" [disabled]="this.channelPanelService.shouldQuitButtonDisableSubject.getValue()">
+                <div *ngFor="let channel of channels">
+                    <mat-list-option (click)="deleteChannel(channel)">
+                        <mat-icon mat-list-icon>forum</mat-icon>
+                        <div mat-line>{{channel.name}}</div>
+                        <div mat-line>Key: {{channel.shareKey}}</div>
+                    </mat-list-option>
+                </div>
+            </mat-selection-list>
+        </mat-card-content>
+    </mat-card>
+</div>

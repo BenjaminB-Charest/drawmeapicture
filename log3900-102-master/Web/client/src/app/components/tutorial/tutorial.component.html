@@ -1,0 +1,32 @@
+<div class="wrapper">
+    <mat-card class="mat-card-background">
+        <div style="text-align: end; z-index: 100;">
+            <button mat-icon-button [mat-dialog-close]>
+                <img style="width: 20px; height: 20px;" src="assets/icons/quit.svg">
+            </button>
+        </div>
+        <mat-card class="mat-card">
+            <mat-card-header>
+                <img mat-card-avatar src="assets/icons/image2vector.svg">
+                <mat-card-title><strong>Tutorial</strong></mat-card-title>
+                <mat-card-subtitle>Click on a tab to learn about the game mode</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-tab-group style="max-height: 500px; overflow: auto; height: 465px;">
+                    <mat-tab label="Classic">
+                        <app-classic-tutorial class="classic"></app-classic-tutorial>
+                    </mat-tab>
+                    <mat-tab label="Solo Sprint">
+                        <app-solo-tutorial class="solo"></app-solo-tutorial>
+                    </mat-tab>
+                    <mat-tab label="Word-Image Pair Creation">
+                        <app-word-image-pair-tutorial class="wordImagePair"></app-word-image-pair-tutorial>
+                    </mat-tab>
+                    <mat-tab label="Badges">
+                        <app-badge-tutorial></app-badge-tutorial>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </mat-card>
+    </mat-card>
+</div>

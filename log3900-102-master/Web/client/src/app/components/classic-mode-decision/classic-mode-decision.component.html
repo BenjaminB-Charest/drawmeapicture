@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <div style="text-align: end; z-index: 100;">
+        <button mat-icon-button [mat-dialog-close]>
+            <img style="width: 20px; height: 20px;" src="assets/icons/quit.svg">
+        </button>
+    </div>
+    <mat-card class="mat-card">
+        <mat-card-header>
+            <img mat-card-avatar src="assets/icons/image2vector.svg">
+            <mat-card-title><strong>Please select an option</strong></mat-card-title>
+        </mat-card-header>
+        <mat-card-content style="padding-top: 10px;">
+            <div style="text-align: center; padding-bottom: 10px;">
+                <button class="btn btn-warning btn-center" style="border-radius: 30px;" (click)="openCreateGameDialog()" [mat-dialog-close]><strong>Create New Game</strong></button>
+            </div>
+            <div style="text-align: center;">
+                <button class="btn btn-warning btn-center" style="border-radius: 30px;" (click)="openJoinLobbyDialog()" [mat-dialog-close]><strong>Join Existing Game</strong></button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

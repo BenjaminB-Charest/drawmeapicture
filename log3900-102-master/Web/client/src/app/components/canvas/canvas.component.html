@@ -1,0 +1,107 @@
+<svg
+  (contextmenu)="false"
+    #drawing
+
+>
+  <defs>
+    <style type="text/css">@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Oswald|Raleway|Roboto|Indie+Flower|Gamja+Flower');</style>
+    <filter id="filter0" x="-50" y="-50" width="100" height="100">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <!-- source: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDisplacementMap -->
+    <filter id="displacementFilter" x="-50" y="-50" width="100" height="100">
+      <feTurbulence type="turbulence" baseFrequency="0.05"
+          numOctaves="2" result="turbulence"/>
+      <feDisplacementMap in2="turbulence" in="SourceGraphic"
+          scale="50" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- source: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDiffuseLighting -->
+    <filter id="lightMe1">
+      <feDiffuseLighting in="SourceGraphic" result="light"
+          lighting-color="white">
+        <fePointLight x="150" y="60" z="20" />
+      </feDiffuseLighting>
+
+      <feComposite in="SourceGraphic" in2="light"
+                   operator="arithmetic" k1="1" k2="0" k3="0" k4="0"/>
+    </filter>
+    <!-- create em here: https://yoksel.github.io/svg-filters/#/ -->
+    <filter id="filter2" x="-50" y="-50" width="100" height="100" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+      <feComponentTransfer x="0%" y="0%" width="100%" height="100%" in="offset1" result="componentTransfer">
+            <feFuncR type="identity"/>
+        <feFuncG type="identity"/>
+        <feFuncB type="identity"/>
+        <feFuncA type="linear" slope="0.2" intercept="0"/>
+        </feComponentTransfer>
+      <feOffset dx="10" dy="10" x="0%" y="0%" width="100%" height="100%" in="componentTransfer" result="offset3"/>
+      <feOffset dx="0" dy="10" x="0%" y="0%" width="100%" height="100%" in="componentTransfer" result="offset4"/>
+      <feOffset dx="-10" dy="10" x="0%" y="0%" width="100%" height="100%" in="componentTransfer" result="offset5"/>
+      <feOffset dx="-10" dy="0" x="0%" y="0%" width="100%" height="100%" in="componentTransfer" result="offset6"/>
+      <feOffset dx="-10" dy="-10" x="0%" y="0%" width="100%" height="100%" in="componentTransfer" result="offset7"/>
+      <feOffset dx="0" dy="-10" x="0%" y="0%" width="100%" height="100%" in="componentTransfer" result="offset8"/>
+      <feOffset dx="10" dy="-10" x="0%" y="0%" width="100%" height="100%" in="componentTransfer" result="offset9"/>
+      <feOffset dx="10" dy="0" x="0%" y="0%" width="100%" height="100%" in="componentTransfer" result="offset10"/>
+      <feMerge x="0%" y="0%" width="100%" height="100%" result="merge">
+            <feMergeNode in="componentTransfer"/>
+        <feMergeNode in="offset3"/>
+        <feMergeNode in="offset4"/>
+        <feMergeNode in="offset5"/>
+        <feMergeNode in="offset6"/>
+        <feMergeNode in="offset7"/>
+        <feMergeNode in="offset8"/>
+        <feMergeNode in="offset9"/>
+        <feMergeNode in="offset10"/>
+        </feMerge>
+    </filter>
+    <filter id="filter5" x="-50" y="-50" width="100" height="100" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+      <feGaussianBlur stdDeviation="4 4" x="0%" y="0%" width="100%" height="100%" in="displacementMap5" edgeMode="none" result="blur1"/>
+      <feTurbulence type="turbulence" baseFrequency="0.045 0.1" numOctaves="2" seed="2" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence1"/>
+      <feDisplacementMap in="blur1" in2="turbulence1" scale="20" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap5"/>
+    </filter>
+    <filter id="filter3" x="-50" y="-50" width="100" height="100" filterUnits="objectBoundingBox" primitiveUnits="userSpaceOnUse" color-interpolation-filters="linearRGB">
+      <feTurbulence type="turbulence" baseFrequency="0.047 0.041" numOctaves="1" seed="1" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence1"/>
+      <feTurbulence type="turbulence" baseFrequency="0.047 0.041" numOctaves="1" seed="2" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence2"/>
+      <feTurbulence type="turbulence" baseFrequency="0.047 0.041" numOctaves="1" seed="3" stitchTiles="stitch" x="0%" y="0%" width="100%" height="100%" result="turbulence3"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence3" scale="38" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap5"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence1" scale="38" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap6"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence2" scale="38" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" result="displacementMap7"/>
+      <feMerge x="0%" y="0%" width="100%" height="100%" result="merge4">
+            <feMergeNode in="displacementMap5"/>
+        <feMergeNode in="displacementMap6"/>
+        <feMergeNode in="displacementMap7"/>
+        </feMerge>
+      <feOffset dx="-13" dy="-13" x="0%" y="0%" width="100%" height="100%" in="merge4" result="offset11"/>
+    </filter>
+  </defs>
+</svg>
+
+<svg
+  #grid
+  class="grid"
+  [attr.width]="0"
+  [attr.height]="0"
+>
+<defs>
+  <pattern id="smallGrid" [attr.width]="thickness" [attr.height]="thickness" patternUnits="userSpaceOnUse">
+      <path
+          d="M 200 0 L 0 0 0 200"
+          fill="none"
+          stroke="gray"
+          stroke-width="2"
+          [attr.stroke-opacity]="opacity"
+      />
+  </pattern>
+  <pattern id="grid" [attr.width]="thickness" [attr.height]="thickness" patternUnits="userSpaceOnUse">
+      <rect width="200" height="200" fill="url(#smallGrid)" />
+  </pattern>
+</defs>
+<rect
+  #rect
+  class="grid"
+  fill="url(#grid)"
+  [attr.opacity]="opacity"
+/>
+</svg>
+
+<canvas #canvas class="canvas"></canvas>
+

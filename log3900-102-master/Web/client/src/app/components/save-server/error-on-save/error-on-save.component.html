@@ -1,0 +1,8 @@
+<p  class="error">Warning!</p>
+<mat-dialog-content>
+  <p>An error occurred during the backup. </p> <br/>
+  <p *ngIf="!errorTitle">- Your title is not valid.</p>
+</mat-dialog-content>
+<div class="button-section">
+  <button mat-button id="confirm-button" [mat-dialog-close]="true">I understand.</button>
+</div>

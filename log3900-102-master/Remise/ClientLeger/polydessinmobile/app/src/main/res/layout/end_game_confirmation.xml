@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:padding="20dp">
+    <ImageView
+        android:id="@+id/app_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/app_logo"/>
+    <TextView
+        android:id="@+id/end_confirmation_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you sure you want to quit the game? You will give the victory to the opposite team"
+        android:textSize="24sp"
+        android:layout_alignTop="@id/app_icon"
+        android:layout_marginBottom="2dp"
+        android:gravity="center"
+        android:layout_toEndOf="@id/app_icon"
+        android:layout_marginStart="20dp"/>
+
+    <android.widget.Button
+        android:id="@+id/ok_end_game_confirmation_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quit"
+        android:background="@drawable/rounded_corners_empty_background"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_alignEnd="@id/end_confirmation_message"
+        android:layout_below="@id/end_confirmation_message"
+        android:paddingHorizontal="10dp"
+        android:textStyle="normal"
+        android:textSize="24sp"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"/>
+    <android.widget.Button
+        android:id="@+id/cancel_end_game_confirmation_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_toStartOf="@id/ok_end_game_confirmation_button"
+        android:layout_alignTop="@id/ok_end_game_confirmation_button"
+
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/dark_gray"
+        android:textSize="24sp"
+        android:background="@drawable/rounded_button_border_grey"
+        android:paddingHorizontal="16dp"
+        android:textAllCaps="false"/>
+</RelativeLayout>

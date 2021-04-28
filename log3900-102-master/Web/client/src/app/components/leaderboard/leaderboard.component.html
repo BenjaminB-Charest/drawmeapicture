@@ -1,0 +1,144 @@
+<div class="wrapper">
+    <div style="text-align: end; z-index: 100;">
+        <button mat-icon-button [mat-dialog-close]>
+            <img style="width: 20px; height: 20px;" src="assets/icons/quit.svg">
+        </button>
+    </div>
+    <mat-card class="mat-card">
+        <mat-card-header>
+            <img mat-card-avatar src="assets/icons/image2vector.svg">
+            <mat-card-title><strong>Leaderboard</strong></mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngIf="!isWaiting">
+            <div style="float: right; position: absolute; top: 21px; right: 49px;">
+                <h6><strong>Your Rank: {{rank}} | Score: {{score}} points</strong></h6>
+            </div>
+            <mat-tab-group (selectedTabChange)="tabChanged1($event)">
+                <mat-tab label="Classic">
+                    <mat-tab-group style="height: 453px; overflow: auto;" (selectedTabChange)="tabChanged2($event)">
+                        <mat-tab label="Today">
+                            <div *ngFor="let player of classicToday">
+                                <div *ngIf="player.position !== 10; else elseBlock">
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}} class="image">{{player.name}} - {{player.point}} points</mat-list-item>
+                                </div>
+                                <ng-template #elseBlock>
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}}
+                                            style="width: auto; height: 45px; padding-left: 2px; padding-right: 10px;">{{player.name}} - {{player.point}}
+                                        points</mat-list-item>
+                                </ng-template>                                
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="This week">
+                            <div *ngFor="let player of classicWeek">
+                                <div *ngIf="player.position !== 10; else elseBlock">
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}} class="image">{{player.name}} - {{player.point}} points</mat-list-item>
+                                </div>
+                                <ng-template #elseBlock>
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}}
+                                            style="width: auto; height: 45px; padding-left: 2px; padding-right: 10px;">{{player.name}} - {{player.point}}
+                                        points</mat-list-item>
+                                </ng-template>                                
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="This month">
+                            <div *ngFor="let player of classicMonth">
+                                <div *ngIf="player.position !== 10; else elseBlock">
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}} class="image">{{player.name}} - {{player.point}} points</mat-list-item>
+                                </div>
+                                <ng-template #elseBlock>
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}}
+                                            style="width: auto; height: 45px; padding-left: 2px; padding-right: 10px;">{{player.name}} - {{player.point}}
+                                        points</mat-list-item>
+                                </ng-template>                                
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="All time">
+                            <div *ngFor="let player of classicAllTime">
+                                <div *ngIf="player.position !== 10; else elseBlock">
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}} class="image">{{player.name}} - {{player.point}} points</mat-list-item>
+                                </div>
+                                <ng-template #elseBlock>
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}}
+                                            style="width: auto; height: 45px; padding-left: 2px; padding-right: 10px;">{{player.name}} - {{player.point}}
+                                        points</mat-list-item>
+                                </ng-template>                                
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-tab>
+                <mat-tab label="Solo Sprint">
+                    <mat-tab-group style="height: 453px; overflow: auto;" (selectedTabChange)="tabChanged2($event)">
+                        <mat-tab label="Today">
+                            <div *ngFor="let player of soloToday">
+                                <div *ngIf="player.position !== 10; else elseBlock">
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}} class="image">{{player.name}} - {{player.point}} points</mat-list-item>
+                                </div>
+                                <ng-template #elseBlock>
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}}
+                                            style="width: auto; height: 45px; padding-left: 2px; padding-right: 10px;">{{player.name}} - {{player.point}}
+                                        points</mat-list-item>
+                                </ng-template>
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="This week">
+                            <div *ngFor="let player of soloWeek">
+                                <div *ngIf="player.position !== 10; else elseBlock">
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}} class="image">{{player.name}} - {{player.point}} points</mat-list-item>
+                                </div>
+                                <ng-template #elseBlock>
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}}
+                                            style="width: auto; height: 45px; padding-left: 2px; padding-right: 10px;">{{player.name}} - {{player.point}}
+                                        points</mat-list-item>
+                                </ng-template>                                
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="This month">
+                            <div *ngFor="let player of soloMonth">
+                                <div *ngIf="player.position !== 10; else elseBlock">
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}} class="image">{{player.name}} - {{player.point}} points</mat-list-item>
+                                </div>
+                                <ng-template #elseBlock>
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}}
+                                            style="width: auto; height: 45px; padding-left: 2px; padding-right: 10px;">{{player.name}} - {{player.point}}
+                                        points</mat-list-item>
+                                </ng-template>                                
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="All time">
+                            <div *ngFor="let player of soloAllTime">
+                                <div *ngIf="player.position !== 10; else elseBlock">
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}} class="image">{{player.name}} - {{player.point}} points</mat-list-item>
+                                </div>
+                                <ng-template #elseBlock>
+                                    <mat-list-item># {{player.position}} <img src={{player.avatar}}
+                                            style="width: auto; height: 45px; padding-left: 2px; padding-right: 10px;">{{player.name}} - {{player.point}}
+                                        points</mat-list-item>
+                                </ng-template>                                
+                                <mat-divider></mat-divider>
+                            </div>
+                        </mat-tab>
+                    </mat-tab-group>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+        <div class="waiting" *ngIf="isWaiting" style="background-color: #c2eeee;">
+          <mat-card style="background-color: #d9f3f2;">
+            <mat-card-header>
+              <mat-card-title><strong>Loading Leaderboard</strong></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="loading">
+                <mat-spinner></mat-spinner>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+    </mat-card>
+</div>

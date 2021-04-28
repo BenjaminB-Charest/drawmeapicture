@@ -1,0 +1,60 @@
+@import '../../../global-style/colors.scss';
+@import '../../../global-style/dimensions.scss';
+
+.wrapper {
+    display: flex;
+    height: $full-height;
+    overflow: hidden;
+
+    .sidebar {
+        background-color: #ace6e1;
+        width: fit-content;
+        overflow-y: auto;
+    }
+
+    .pannel {
+        background-color: $option-pannel-color;
+        width: 304px;
+        height: 100%;
+    }
+
+    .pannel-detached{
+        position: absolute;
+        right: 0px;
+        background-color:#d9f3f2;
+        width: 304px;
+        height: 100%;
+        .mat-card{
+            background-color: #c2eeee;
+            width: 200px;
+            top:285px;
+            left: 59px;
+            .mat-card-content{
+                .mat-card-text{
+                    text-align: center;
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+
+    .workspace {
+        .infobar {
+          padding: 10px;
+          background-color: #c2eeee;
+          text-align: center;
+        }
+
+        flex: 1;
+        background-color: #ace6e1;
+        width: auto;
+    }
+
+    .scrollable::-webkit-scrollbar {
+        background-color: transparent;
+    }
+
+    .mat-drawer-side {
+        border-right: none;
+    }
+}

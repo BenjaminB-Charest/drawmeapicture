@@ -1,0 +1,43 @@
+<div class="wrapper">
+    <div *ngIf="(currentTool !== 'info' && currentTool !== 'wordImagePair')">
+        <div class="tool-header">
+            <h4 id="title"><strong>Tool Attributes</strong></h4>
+            <p id="tool"><strong>{{ this.toolSelectorService.getCurrentTool()?.englishName }}</strong></p>
+            <mat-divider></mat-divider>
+        </div>
+
+        <div class="option-panel" [ngSwitch]="currentTool">
+            <app-pencil *ngSwitchCase="'pencil'">Pencil Selected</app-pencil>
+            <app-eraser *ngSwitchCase="'eraser'">Eraser Selected</app-eraser>
+            <app-grid *ngSwitchCase="'grid'">Grid Selected</app-grid>
+        </div>
+
+        <div class="color-wrapper" *ngIf="currentTool !== 'wordImagePair'">
+            <div class="color-panel">
+                <mat-accordion>
+                    <mat-expansion-panel hideToggle="true" [expanded]="true" style="background-color: #c2eeee;">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h6><strong>Color Options</strong></h6>
+                            </mat-panel-title>
+                            <mat-icon>unfold_more</mat-icon>
+                        </mat-expansion-panel-header>
+                        <mat-panel-description>
+                            <div class="inner-color">
+                                <app-color-panel></app-color-panel>
+                            </div>
+                        </mat-panel-description>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="currentTool === 'info'">
+        <app-game-info></app-game-info>
+    </div>
+
+    <div *ngIf="currentTool === 'wordImagePair'">
+        <app-word-image-pair-info></app-word-image-pair-info>
+    </div>
+</div>

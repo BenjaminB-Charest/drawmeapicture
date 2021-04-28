@@ -1,0 +1,31 @@
+<div class="color-wrapper">
+  <div class="color-subsection">
+    <app-color-palette [initialColor]="selectedHue" (newColor)="selectedColor = $event"></app-color-palette>
+  </div>
+  <div class="color-subsection">
+    <app-color-slider (newHue)="selectedHue = $event"></app-color-slider>
+  </div>
+  <div class="color-subsection input-area">
+    <h6>Color</h6>
+    <div id="preview" [style.background-color]="selectedColor.getHex()"></div>
+    <div id="input-fields">
+      <div class="input-row">
+        <label for="red">R : </label>
+        <input [value]="selectedColor.getRedHex()" (blur)="updateRed($event)" id="red" maxlength="2">
+      </div>
+      <div class="input-row">
+        <label for="green">G : </label>
+        <input [value]="selectedColor.getGreenHex()" (blur)="updateGreen($event)" id="green" maxlength="2">
+      </div>
+      <div class="input-row">
+        <label for="blue">B : </label>
+        <input [value]="selectedColor.getBlueHex()" (blur)="updateBlue($event)" id="blue" maxlength="2">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="button-section">
+  <button mat-button id="cancel-button" (click)="onDialogClose()">Back</button>
+  <button mat-button id="confirm-button" (click)="onConfirm()">Confirm</button>
+</div>

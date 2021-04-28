@@ -1,0 +1,39 @@
+@import '../../../global-style/colors.scss';
+@import '../../../global-style/dimensions.scss';
+
+#container {
+    color: black;
+    padding: 30px 40px;
+    padding-bottom: 0px;
+
+    .title {
+        font-weight: bold;
+        color: black;
+    }
+
+    .group {
+        padding: 10px 0 40px 0;
+
+        #borderCheckbox {
+          padding-right: 30px;
+        }
+
+        .mat-slider {
+          margin-top: $slider-bubble-margin;
+          width: $slider-width;
+        }
+
+        #warning {
+          color:red;
+          font-size: 8pt;
+        }
+    }
+}
+
+::ng-deep .mat-slider-ticks-container {
+    background-color: grey;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: $medium;
+}

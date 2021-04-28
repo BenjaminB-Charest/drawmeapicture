@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimaryLight"
+    android:padding="15dp"
+    tools:context=".JoinLobbyActivity"
+    android:id="@+id/activity_join_lobby">
+    <TextView
+        android:id="@+id/games_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Games"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:id="@+id/private_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join game with key"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/games_label"
+        android:layout_alignStart="@id/games_label"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/game_id_join"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Key :"
+        android:textSize="30sp"
+        android:layout_below="@+id/private_label"
+        android:layout_marginVertical="10dp"
+        android:layout_alignStart="@id/private_label"/>
+    <EditText
+        android:id="@+id/game_id_field"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/game_id_join"
+        android:layout_alignTop="@id/game_id_join"
+        android:layout_alignBottom="@id/game_id_join"
+        android:hint="Enter game key"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/dark_gray"
+        android:backgroundTint="@color/dark_gray"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"/>
+
+    <android.widget.Button
+        android:id="@+id/join_private_game_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners_empty_background"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Join"
+        android:textStyle="normal"
+        android:textSize="24sp"
+        android:textAllCaps="false"
+        android:layout_alignBottom="@id/game_id_join"
+        android:layout_alignTop="@+id/game_id_join"
+        android:layout_toEndOf="@+id/game_id_field"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="20dp" />
+
+    <TextView
+        android:id="@+id/public_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter games by difficulty"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/game_id_join"
+        android:layout_alignStart="@id/games_label"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/game_difficulty_join_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Difficulty : "
+        android:textSize="24sp"
+        android:layout_below="@id/public_label"
+        android:layout_alignStart="@id/public_label"
+        android:layout_marginVertical="5dp"/>
+
+    <Spinner
+        android:id="@+id/game_difficulty_join_game_value"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/game_difficulty_join_game"
+        android:layout_alignBottom="@id/game_difficulty_join_game"
+        android:layout_toEndOf="@id/game_difficulty_join_game"
+        android:layout_marginStart="20dp"
+        android:spinnerMode="dropdown"
+        android:background="@color/colorPrimaryMedium"
+        android:overlapAnchor="false"/>
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_arrow_down"
+        android:layout_alignTop="@id/game_difficulty_join_game_value"
+        android:layout_alignBottom="@id/game_difficulty_join_game_value"
+        android:layout_alignEnd="@id/game_difficulty_join_game_value"
+        android:layout_margin="10dp"/>
+
+    <ScrollView
+        android:id="@+id/public_games"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_difficulty_join_game"
+        android:layout_alignStart="@id/public_label"
+        android:layout_marginEnd="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_public_games"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:padding="4dp"
+                tools:listitem="@layout/join_game_item"/>
+        </RelativeLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/chat_button_popup_join_lobby"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_chat"
+        android:padding="10dp"
+        android:scaleType="fitXY"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/rounded_corners_button_yellow"/>
+
+    <TextView
+        android:id="@+id/notification_popup_join_lobby"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignTop="@+id/chat_button_popup_join_lobby"
+        android:layout_alignEnd="@+id/chat_button_popup_join_lobby"
+        android:background="@drawable/round_notification"
+        android:backgroundTint="@color/redNotification"
+        android:gravity="center"
+        android:layout_marginTop="-5dp"
+        android:layout_marginEnd="-5dp"
+        android:visibility="visible"/>
+
+</RelativeLayout>

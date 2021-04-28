@@ -1,0 +1,87 @@
+<div class="wrapper">
+
+  <div class="title">
+    <h4><strong>Game Info</strong></h4>
+    <mat-divider></mat-divider>
+  </div>
+
+  <h6><strong>Game Mode: </strong>{{gameMode}}</h6>
+  <h6><strong>Current Round:</strong> {{currentRound}}</h6>
+
+  <div *ngIf="this.actualGameMode == 'classic'" class="channels-list">
+    <mat-list>
+      <div mat-subheader>Team A</div>
+      <div *ngFor="let participant of participants">
+        <mat-list-item *ngIf="participant.team=='A'">
+          <img mat-list-icon src={{participant.avatar}}>
+          <div mat-line>{{participant.name}}</div>
+          <div mat-line>{{participant.points}} points</div>
+          <div mat-line>{{participant.role}}</div>
+          <div *ngIf="participant.name === 'Alice [Robot]'">
+            <div style="padding-bottom: 42px;" mat-line><strong>({{robotMood[0]}})</strong></div>
+          </div>
+          <div *ngIf="participant.name === 'Bob [Robot]'">
+            <div style="padding-bottom: 42px;" mat-line><strong>({{robotMood[1]}})</strong></div>
+          </div>
+          <div *ngIf="(participant.name !== 'Alice [Robot]' && participant.name !== 'Bob [Robot]')" style="float: right; position: absolute; left: 133px; top: 34px;">
+            <img style="width: 22px; height: 22px; padding-right: 2px;" src={{participant.badges[0]}} matTooltip={{participant.badgesDescription[0]}}>
+            <img style="width: 22px; height: 22px; padding-right: 2px;" src={{participant.badges[1]}} matTooltip={{participant.badgesDescription[1]}}>
+            <img style="width: 22px; height: 22px; padding-right: 2px;" src={{participant.badges[2]}} matTooltip={{participant.badgesDescription[2]}}>
+          </div>
+        </mat-list-item>
+      </div>
+
+      <div mat-subheader>Team B</div>
+      <div *ngFor="let participant of participants">
+        <mat-list-item *ngIf="participant.team=='B'">
+          <img mat-list-icon src={{participant.avatar}}>
+          <div mat-line>{{participant.name}}</div>
+          <div mat-line>{{participant.points}} points</div>
+          <div mat-line>{{participant.role}}</div>
+          <div *ngIf="participant.name === 'Bob [Robot]'">
+            <div style="padding-bottom: 42px;" mat-line><strong>({{robotMood[1]}})</strong></div>
+          </div>
+          <div *ngIf="participant.name === 'Alice [Robot]'">
+            <div style="padding-bottom: 42px;" mat-line><strong>({{robotMood[0]}})</strong></div>
+          </div>
+          <div *ngIf="(participant.name !== 'Alice [Robot]' && participant.name !== 'Bob [Robot]')" style="float: right; position: absolute; left: 133px; top: 34px;">
+            <img style="width: 22px; height: 22px; padding-right: 2px;" src={{participant.badges[0]}} matTooltip={{participant.badgesDescription[0]}}>
+            <img style="width: 22px; height: 22px; padding-right: 2px;" src={{participant.badges[1]}} matTooltip={{participant.badgesDescription[1]}}>
+            <img style="width: 22px; height: 22px; padding-right: 2px;" src={{participant.badges[2]}} matTooltip={{participant.badgesDescription[2]}}>
+          </div>
+        </mat-list-item>
+      </div>
+    </mat-list>
+  </div>
+
+  <div *ngIf="this.actualGameMode == 'solo'" class="channels-list">
+    <h6><strong>Guesses Left: </strong>{{guessesLeft}}</h6>
+    <div>
+      <mat-list>
+        <mat-list-item>
+          <img mat-list-icon src={{avatar}}>
+          <div mat-line>{{name}}</div>
+          <div mat-line>{{score}} points</div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div style="float: right; position: absolute; left: 197px; top: 200px;">
+      <img style="width: 22px; height: 22px; padding-right: 2px;" src={{badges[0]}} matTooltip={{badgesName[0]}}>
+      <img style="width: 22px; height: 22px; padding-right: 2px;" src={{badges[1]}} matTooltip={{badgesName[1]}}>
+      <img style="width: 22px; height: 22px; padding-right: 2px;" src={{badges[2]}} matTooltip={{badgesName[2]}}>
+    </div>
+  </div>
+
+  <div *ngIf="actualGameMode === 'classic'" class="hint">
+    <button mat-button [disabled]="!isGuessing || gameEngineService.$hintsLeft.getValue() === 0"
+    (click)="getHint()"
+    [ngClass]="{'disabled': !isGuessing || gameEngineService.$hintsLeft.getValue() === 0,
+            'not-disabled': isGuessing}">Ask for Hint</button>
+  </div>
+  <div *ngIf="actualGameMode === 'solo'" class="hint">
+    <button mat-button [disabled]="!isGuessing || soloSprintEngineService.$hintsLeft.getValue() === 0" (click)="getHint()"
+      [ngClass]="{'disabled': !isGuessing || soloSprintEngineService.$hintsLeft.getValue() === 0,
+              'not-disabled': isGuessing}">Ask for Hint</button>
+  </div>
+  <p id="note"><i>Only the Guessing player can ask for hints</i></p>
+</div>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:background="@color/colorPrimaryMedium">
+
+        <TextView
+            android:id="@+id/game_name_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:text="gameName"/>
+
+        <android.widget.Button
+            android:id="@+id/join_game_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners_empty_background"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Join"
+            android:layout_marginEnd="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textStyle="normal"
+            android:textSize="24sp"
+            android:textAllCaps="false"/>
+        <TextView
+            android:id="@+id/teamA_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team A"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_alignStart="@id/player1_avatar_join"
+            android:layout_below="@id/game_name_join"/>
+        <ImageView
+            android:id="@+id/player1_avatar_join"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/teamA_join"
+            android:layout_marginVertical="5dp"
+            android:src="@drawable/empty_avatar"/>
+        <TextView
+            android:id="@+id/player1_username_join"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_below="@+id/game_name_join"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/player1_avatar_join"
+            android:layout_alignTop="@id/player1_avatar_join"
+            android:layout_alignBottom="@id/player1_avatar_join"
+            android:text="No player"/>
+        <ImageView
+            android:id="@+id/player2_avatar_join"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/empty_avatar"
+            android:layout_below="@id/player1_avatar_join"
+            android:layout_marginVertical="5dp"/>
+        <TextView
+            android:id="@+id/player2_username_join"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_toEndOf="@id/player2_avatar_join"
+            android:layout_alignTop="@id/player2_avatar_join"
+            android:layout_alignBottom="@id/player2_avatar_join"
+            android:layout_marginStart="10dp"
+            android:text="No player"/>
+        <TextView
+            android:id="@+id/teamB_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team B"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_alignStart="@id/player3_avatar_join"
+            android:layout_alignTop="@id/teamA_join"/>
+        <ImageView
+            android:id="@+id/player3_avatar_join"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/empty_avatar"
+            android:layout_toEndOf="@id/player1_username_join"
+            android:layout_alignTop="@id/player1_avatar_join"
+            android:layout_marginStart="50dp"/>
+        <TextView
+            android:id="@+id/player3_username_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_toEndOf="@id/player3_avatar_join"
+            android:layout_alignTop="@id/player3_avatar_join"
+            android:layout_alignBottom="@id/player3_avatar_join"
+            android:layout_marginStart="10dp"
+            android:text="No player"/>
+        <ImageView
+            android:id="@+id/player4_avatar_join"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/empty_avatar"
+            android:layout_alignTop="@id/player2_avatar_join"
+            android:layout_alignStart="@id/player3_avatar_join"/>
+        <TextView
+            android:id="@+id/player4_username_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_toEndOf="@id/player4_avatar_join"
+            android:layout_alignTop="@id/player4_avatar_join"
+            android:layout_alignBottom="@id/player4_avatar_join"
+            android:layout_marginStart="10dp"
+            android:text="No player"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,67 @@
+@import "../../../global-style/colors.scss";
+
+button:focus {
+  outline: 0;
+}
+
+.section {
+  margin-bottom: 10px;
+  width: 100%;
+  min-height: 100px;
+
+  .title {
+    color: black;
+    margin-bottom: 1rem;
+  }
+
+  .color-preview {
+    float: left;
+    width: 30%;
+
+    #primary-color-button {
+      width: 55px;
+      height: 55px;
+      font-size: 12px;
+      padding: 0;
+    }
+  }
+
+  .transparency {
+    float: right;
+    width: 70%;
+
+    .sub-title {
+      margin-bottom: 0rem;
+      color: black;
+    }
+
+    .mat-slider {
+      padding-top: 0;
+      padding-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  .centered-section {
+    text-align: center;
+
+    #invert-button {
+      background-color: $vivid;
+      margin-bottom: 10px;
+    }
+
+    #change-background {
+      background-color: $vivid;
+    }
+  }
+
+  #recent {
+
+    tr {
+      display: flex;
+      margin-left: 20px;
+    }
+
+
+  }
+}

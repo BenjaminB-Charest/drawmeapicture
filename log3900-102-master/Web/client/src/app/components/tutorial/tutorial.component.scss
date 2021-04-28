@@ -1,0 +1,20 @@
+.wrapper{
+    width: 600px;
+    .mat-card-background{
+        background-color: #c2eeee;
+        .mat-card{
+            background-color: #d9f3f2;
+            width: 568px;
+            height: 565px;
+        }
+    }
+    ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+        background-color: #8b8b8b;
+    }
+
+    button:focus, button:active:focus, button.active:focus{
+        outline: none !important;
+        outline-style: none !important;
+    }
+
+}

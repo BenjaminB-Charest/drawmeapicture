@@ -1,0 +1,94 @@
+@import '../../../global-style/colors.scss';
+
+:host {
+  display: flex;
+}
+
+.wrapper {
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  word-break: break-word;
+  background-color: #ace6e1;
+}
+
+#history {
+  margin: auto;
+  margin-bottom: 5px;
+  text-align: center;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.mat-button {
+  margin-top: 3px;
+  min-width: 51px;
+  min-height: 51px;
+  max-width: 51px;
+  max-height: 51px;
+
+  .mat-icon {
+    max-width: 51px;
+    max-height: 51px;
+  }
+}
+
+.mat-button:hover {
+  outline: none;
+  box-shadow: none;
+}
+
+.mat-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $medium;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $dark;
+}
+
+.chat-board {
+  overflow: hidden;
+}
+
+.chat-container {
+  width: 100%;
+}
+
+.chat-form {
+  background-color: #ace6e1;
+  display: flex;
+}
+
+::ng-deep{
+
+  // .mat-input-element {
+  //   caret-color:$dark-gray !important;
+  // }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color:$dark-gray !important;
+  }
+
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color:$dark-gray !important;
+  }
+}
+
+
+
+

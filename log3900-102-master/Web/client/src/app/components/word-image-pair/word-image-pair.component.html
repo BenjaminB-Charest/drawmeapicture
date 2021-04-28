@@ -1,0 +1,87 @@
+<div class="pair-wrapper">
+    <div style="text-align: end; z-index: 100;">
+        <button mat-icon-button [mat-dialog-close]>
+            <img style="width: 20px; height: 20px;" src="assets/icons/quit.svg">
+        </button>
+    </div>
+    <mat-card class="mat-card">
+        <mat-card-header>
+            <img mat-card-avatar src="assets/icons/image2vector.svg">
+            <mat-card-title><strong>Create a Word-Image Pair</strong></mat-card-title>
+            <mat-card-subtitle>Please enter informations</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-horizontal-stepper linear #stepper style="background-color: #d9f3f2;">
+                <mat-step [stepControl]="nameForm" errorMessage="Name is required.">
+                    <form [formGroup]="nameForm">
+                        <ng-template matStepLabel>Word name</ng-template>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Ex. House" formControlName="name" required>
+                            <mat-icon matSuffix>badge</mat-icon>
+                        </mat-form-field>
+                        <div>
+                            <p>Please provide a word.</p>
+                            <button class="btn btn-warning btn-center" style="border-radius: 30px; width: 130px;" (click)="onNext(stepper)"><strong>Next</strong></button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="difficultyForm" errorMessage="Difficulty is required.">
+                    <form [formGroup]="difficultyForm">
+                        <ng-template matStepLabel>Difficulty</ng-template>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Difficulty</mat-label>
+                            <mat-select formControlName="difficulty">
+                                <mat-option value="easy">Easy</mat-option>
+                                <mat-option value="normal">Normal</mat-option>
+                                <mat-option value="hard">Hard</mat-option>
+                            </mat-select>
+                            <mat-icon matSuffix>list</mat-icon>
+                        </mat-form-field>
+                        <div>
+                            <p>Select a difficulty which the word will appear.</p>
+                            <div style="padding-right: 5px; float: left;">
+                                <button class="btn btn-warning btn-center" style="border-radius: 30px; width: 130px;" matStepperPrevious><strong>Back</strong></button>
+                            </div>
+                            <button class="btn btn-warning btn-center" style="border-radius: 30px; width: 130px;" matStepperNext><strong>Next</strong></button>
+                        </div>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="hintForm" errorMessage="Hints are required.">
+                    <ng-template matStepLabel>Hints</ng-template>
+                    <mat-form-field class="hint-input" appearance="outline">
+                        <mat-label>Hints</mat-label>
+                        <mat-chip-list #hintList aria-label="Hint Selection">
+                            <mat-chip *ngFor="let hint of hints" (removed)="removeHint(hint)">{{hint}}<mat-icon matChipRemove>cancel</mat-icon></mat-chip>
+                            <input
+                            *ngIf="hints.length !== 3"
+                            placeholder="New hint..."
+                            #hintInput
+                            [formControl]="hintForm"
+                            [matChipInputFor]="hintList"
+                            (matChipInputTokenEnd)="addHint($event)">
+                        </mat-chip-list>
+                        <mat-icon matSuffix>lightbulb</mat-icon>
+                    </mat-form-field>
+                    <div>
+                        <p>Press ↵Enter to move to the next hint. Provide Hints for other players (Exactly 3 Hints.) </p>
+                        <div style="padding-right: 5px; float: left;">
+                            <button class="btn btn-warning btn-center" style="border-radius: 30px; width: 130px;" matStepperPrevious><strong>Back</strong></button>
+                        </div>
+                        <button class="btn btn-warning btn-center" style="border-radius: 30px; width: 130px;" matStepperNext [disabled]="!shouldNext"><strong>Next</strong></button>
+                    </div>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Drawing Zone</ng-template>
+                    <div style="padding-bottom: 5px;">
+                        <button class="btn btn-danger btn-center" style="border-radius: 30px; width: 200px;"  [mat-dialog-close] routerLink="/dessin" (click)="onGoToDrawing()"><strong>Go To Drawing Zone</strong></button>
+                    </div>
+                    <div>
+                        <p>Please access the "Go To Drawing Zone for your drawing!"</p>
+                        <button class="btn btn-warning btn-center" style="border-radius: 30px; width: 130px;" matStepperPrevious><strong>Back</strong></button>
+                    </div>
+                </mat-step>
+            </mat-horizontal-stepper>
+        </mat-card-content>
+    </mat-card>
+</div>

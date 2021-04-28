@@ -1,0 +1,66 @@
+@import "../../../global-style/colors.scss";
+@import "../../../global-style/dimensions.scss";
+
+.wrapper {
+  height: 100%;
+  width: 96px;
+  overflow-y: auto;
+}
+
+.tool-group {
+  display: flex;
+  width: 100%;
+}
+
+#lower-icons {
+  position: absolute;
+  bottom: 1px;
+  background-color: #4a4e4e;
+}
+
+.bottom {
+  display: flex;
+  background-color: #c2eeee;
+}
+
+hr {
+  margin: 0;
+  border-color: #4a4e4e;
+}
+
+button:focus {
+  outline:0;
+}
+
+.clicked {
+  background-color: $clicked-sidebar-option;
+}
+
+.not-clicked {
+  
+}
+
+.mat-button {
+  min-width: 48px;
+  min-height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+
+  .img {
+    max-width: 48px;
+    max-height: 48px;
+  }
+}
+
+#upper-icons::-webkit-scrollbar {
+  display: none;
+}
+
+::ng-deep .mat-tooltip {
+  background-color: $light;
+  font-size: 10px;
+}
+
+#bumper {
+  padding-bottom: 144px;
+}

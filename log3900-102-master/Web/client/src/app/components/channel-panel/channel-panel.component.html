@@ -1,0 +1,55 @@
+<div class="wrapper" *ngIf="!isDetached">
+  <div class="header">
+    <h4 id="title"><strong>Chat Channels</strong></h4>
+    <div *ngIf="!isDetached">
+    </div>
+  </div>
+
+  <div style="background-color: #c2eeee; padding-bottom: 10px;">
+    <button #add mat-mini-fab class="add-channel" color="accent" matTooltip="Add New or Join Existing Channel" (click)="openAddChannelDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button #remove mat-mini-fab class="delete-channel" color="accent" matTooltip="Delete Channel" (click)="openDeleteChannelDialog()" [disabled]="this.chatService.$availableChannels.getValue().length > 1 ? false:true">
+      <mat-icon>remove</mat-icon>
+    </button>
+    <button #detach mat-mini-fab color="accent" class="window-button" matTooltip="Go To Window Mode" (click)="onDetach()">
+      <mat-icon>backup_table</mat-icon>
+    </button>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div>
+    <mat-selection-list [multiple]="false" style="max-height: 436px; overflow: auto;">
+      <div *ngFor="let channel of channels">
+        <mat-list-option (click)="setSelectedChannel(channel)">
+          <mat-icon mat-list-icon>forum</mat-icon>
+          <div mat-line>{{channel.name}}</div>
+          <div mat-line>Key: {{channel.shareKey}}</div>
+        </mat-list-option>
+      </div>
+    </mat-selection-list>
+  </div>
+
+  <div class="color-wrapper">
+    <div class="color-panel">
+          <mat-accordion>
+            <mat-expansion-panel hideToggle="true" [expanded]="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h6>{{selectedChannel.name}}</h6>
+                </mat-panel-title>
+                <mat-icon>unfold_more</mat-icon>
+              </mat-expansion-panel-header>
+              <mat-panel-description>
+                <div class="inner-color">
+                  <app-chat-panel></app-chat-panel>
+                </div>
+              </mat-panel-description>
+            </mat-expansion-panel>
+          </mat-accordion>
+    </div>
+  </div>
+</div>
+
+

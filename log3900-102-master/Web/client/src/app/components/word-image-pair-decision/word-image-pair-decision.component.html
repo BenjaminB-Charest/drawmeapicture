@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <mat-card class="mat-card">
+        <mat-card-header>
+            <img mat-card-avatar src="assets/icons/image2vector.svg">
+            <mat-card-title><strong>Please select an option:</strong></mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="mat-content">
+            <div class="left">
+                <h6><strong>View drawing</strong></h6>
+                <button mat-fab color="accent" class="button" [mat-dialog-close] [disabled]="doneIsDisabled" (click)="onAccelerate()">
+                    <mat-icon>history</mat-icon>
+                </button>
+            </div>
+            <div class="edit">
+                <h6><strong>Continue Edit</strong></h6>
+                <button mat-fab color="accent" [mat-dialog-close] (click)="OnEdit()">
+                    <mat-icon>mode_edit</mat-icon>
+                </button>
+            </div>
+            <div class="right">
+                <h6><strong>Done</strong></h6>
+                <button mat-fab color="accent" class="button" [mat-dialog-close] [disabled]="doneIsDisabled" (click)="onDone()">
+                    <mat-icon>done</mat-icon>
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

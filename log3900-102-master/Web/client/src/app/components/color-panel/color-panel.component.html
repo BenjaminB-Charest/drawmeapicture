@@ -1,0 +1,47 @@
+<div class="section" style="background-color: #c2eeee;">
+  <h6 class="title"><strong>Custom Color Selector</strong></h6>
+  <div class="color-preview">
+    <button id="primary-color-button"
+    (click)="onPrimaryColorChange()"
+    [style.background-color]="primaryColor.getHex()"></button>
+  </div>
+  <div class="transparency">
+    <p class="sub-title">Transparency : {{ primaryTransparency }}</p>
+    <mat-slider
+      (change)="onTransparencyChange(true)"
+      [min]="0.01"
+      [max]="1.00"
+      [step]="0.01"
+      [(ngModel)]="primaryTransparency">
+    </mat-slider>
+  </div>
+</div>
+
+<div class="section" style="background-color: #c2eeee;">
+  <h6 class="title"><strong>Quick Access Colors</strong></h6>
+  <div id="recent">
+
+    <table >
+      <tr>
+        <div *ngFor="let color of quickAccessColors;let i = index">
+          <td *ngIf= "i < quickAccessColors.length/2">
+            <button mat-mini-fab class="last-colors"
+            (click)="onLeftClick(color)"
+            [style.background-color]="color.getHex()"></button>
+          </td>
+        </div>
+      </tr>
+      <tr>
+        <div *ngFor="let color of quickAccessColors;let i = index">
+          <td *ngIf= "i >= quickAccessColors.length/2">
+            <button mat-mini-fab class="last-colors"
+            (click)="onLeftClick(color)"
+            [style.background-color]="color.getHex()"></button>
+          </td>
+        </div>
+      </tr>
+    </table>
+  </div>
+</div>
+
+

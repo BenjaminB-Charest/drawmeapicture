@@ -1,0 +1,61 @@
+@import '../../../global-style/colors.scss';
+
+.authentification_wrapper {
+    background-image: url(../../../assets/images/y1ostvqnr4711.jpg);
+    width: 60%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
+.sign_in_page_wrapper {
+    background-color: rgb(217, 243, 242);
+    width: 40%;
+    height: 100%;
+    float: right;
+}
+
+.welcome_header {
+    font-weight: bolder;
+    text-align: center;
+    color: black;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 110px;
+    size: 20px;
+}
+
+.welcome_header_game_name {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.quote_header {
+    text-align: center;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-bottom: 40px;
+}
+
+.explanation_header {
+    text-align: center;
+    color: black;
+    padding-bottom: 30px;
+}
+
+.view_more_button {
+    text-align: center;
+    margin-left: 300px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(31, 123, 151);
+    border: 0cm;
+    width: 250px;
+    height: 40px;
+}
+
+.view_more_button:hover {
+    background-color: rgba(65, 196, 167, 0.479);
+    color: rgb(0, 0, 0);
+}

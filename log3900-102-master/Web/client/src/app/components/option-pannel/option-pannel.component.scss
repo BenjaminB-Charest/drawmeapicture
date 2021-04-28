@@ -1,0 +1,85 @@
+@import "../../../global-style/colors.scss";
+
+.wrapper {
+  background-color: #d9f3f2;
+  min-height: 100%;
+
+  .tool-header {
+    padding: 15px;
+
+    #title {
+      color: black;
+      text-align: center;
+      padding-bottom: 4px;
+      padding-top: 10px;
+      margin: 0;
+    }
+
+    #tool {
+      margin: 0;
+      color: black;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .mat-divider {
+      border-top-width: 1px;
+      border-top-color: $gray;
+      padding-bottom: 10px;
+    }
+  }
+
+  .color-wrapper {
+    width: 100%;
+    margin: 0 auto;
+
+    .color-panel {
+      width: 300px;
+      position: absolute;
+      bottom: 0px;
+      background-color:#ace6e1;
+      z-index: 9;
+
+      .mat-expansion-panel {
+        background-color: #c2eeee;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        .mat-icon {
+          color: black;
+        }
+
+        .mat-expansion-panel-header-description, .mat-expansion-panel-header-title {
+          margin: auto;
+
+          h6 {
+            color: black;
+          }
+
+          .inner-color {
+            width: 100%;
+            background-color:  #c2eeee;
+          }
+        }
+      }
+
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

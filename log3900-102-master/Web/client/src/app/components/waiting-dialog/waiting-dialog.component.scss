@@ -1,0 +1,67 @@
+@import "../../../global-style/colors.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #c2eeee;
+  overflow: hidden;
+}
+
+h4 {
+  color:black;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h6 {
+  color: black;
+  font-size: 1em;
+  text-align: center;
+}
+
+.loading {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  mat-spinner{
+    margin: auto;
+  }
+}
+
+.difficulty {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    margin-top: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.button-section {
+  margin-top: 10px;
+  text-align: right;
+}
+
+#cancel-button {
+  outline: none;
+}
+
+::ng-deep.mat-progress-spinner circle, .mat-spinner circle{
+  stroke: #c2eeee;
+} 
+
+button:focus, button:active:focus, button.active:focus{
+  outline: none !important;
+  outline-style: none !important;
+}
+

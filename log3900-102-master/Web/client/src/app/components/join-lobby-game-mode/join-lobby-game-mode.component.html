@@ -1,0 +1,17 @@
+<div class="join-lobby-difficulty-wrapper">
+    <mat-card class="mat-card">
+        <mat-card-header>
+            <img mat-card-avatar src="assets/icons/image2vector.svg">
+            <mat-card-title><strong>Join a Game:</strong></mat-card-title>
+            <mat-card-subtitle>Choose a game mode</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="button-wrapper">
+                <button class="btn btn-warning btn-center" id="button" (click)="onClick('PPvPP')" [mat-dialog-close]="true">PPVPP</button><br>
+                <button class="btn btn-warning btn-center" id="button" (click)="onClick('RPvPP')" [mat-dialog-close]="true">RPVPP</button><br>
+                <button class="btn btn-warning btn-center" id="button" (click)="onClick('PPvRP')" [mat-dialog-close]="true">RPVRP</button><br>
+                <button class="btn btn-warning btn-center" id="button" (click)="onClick('RPvRP')" [mat-dialog-close]="true">RPVRP</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

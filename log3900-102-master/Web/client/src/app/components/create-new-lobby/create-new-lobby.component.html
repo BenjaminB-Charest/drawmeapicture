@@ -1,0 +1,62 @@
+<div *ngIf="!isWaiting" class="create-new-lobby-wrapper">
+    <div class="create-new-lobby-content-wrapper">
+        <mat-card class="mat-card-background">
+            <div style="text-align: end; z-index: 100;">
+                <button mat-icon-button [mat-dialog-close]>
+                    <img style="width: 20px; height: 20px;" src="assets/icons/quit.svg">
+                </button>
+            </div>    
+            <mat-card class="mat-card">
+                <mat-card-header class="mat-card-header">
+                    <img mat-card-avatar src="assets/icons/image2vector.svg">
+                    <mat-card-title class="mat-card-title"><strong>Create a New Game</strong></mat-card-title>
+                    <mat-card-subtitle class="mat-card-subtitle">{{userName}}'s game</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class="mat-card-content">
+                    <form [formGroup]="lobbyForm">
+                        <mat-form-field appearance="outline" class="game-name">
+                            <mat-label>Game Name:</mat-label>
+                            <input matInput [formControl]="name">
+                            <mat-hint>Maximum 15 letters.</mat-hint>
+                        </mat-form-field>
+                        <br>
+                        <div class="game-privacy">
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button class="radio-button" value="true" (change)="onPrivacyChange($event)">Public</mat-radio-button>
+                                <mat-radio-button class="radio-button" value="false" (change)="onPrivacyChange($event)">Private</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <br>
+                        <mat-form-field class="game-difficulty" appearance="outline">
+                            <mat-label>Difficulty:</mat-label>
+                            <mat-select (selectionChange)="onDifficultyChange($event)">
+                                <mat-option value="easy">Easy</mat-option>
+                                <mat-option value="normal">Normal</mat-option>
+                                <mat-option value="hard">Hard</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </form>
+                </mat-card-content>
+                <mat-card-actions>
+                    <div style="text-align: center; padding-bottom: 10px;">
+                        <button class="btn btn-warning btn-center" style="width: 130px; border-radius: 30px;" [disabled]="lobbyForm.invalid" (click)="onCreate()">Create</button>
+                    </div>
+                </mat-card-actions>
+            </mat-card>
+        </mat-card>
+
+    </div>
+</div>
+<div class="waiting" *ngIf="isWaiting" style="background-color: #c2eeee;">
+  <mat-card style="background-color: #d9f3f2;">
+    <mat-card-header>
+      <img mat-card-avatar src="assets/icons/image2vector.svg">
+      <mat-card-title><strong>Creating a new lobby</strong></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

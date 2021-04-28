@@ -1,0 +1,95 @@
+.join-lobby-wrapper{
+    width: 600px;
+    .join-lobby-content-wrapper{
+        .mat-card-background{
+            background-color: #c2eeee;
+            height: 567px;
+            width: 651px;
+            .mat-card{
+                float: left;
+                background-color: #d9f3f2;
+                width: 614px;
+                height: 500px;
+                .mat-card-header{
+                    padding-bottom: 30px;
+                    .mat-card-title{
+                        font-weight: bolder;
+                    }
+                }
+
+                .mat-card-content{
+                    .filter-information-wrapper{
+
+                        .join-game-button-wrapper{
+                            float: right;
+                            padding-right: 215px;
+                            padding-top: 12px;
+                            #joinButton{
+                                width: 87px;
+                                border-radius: 20px;
+                                margin-right: 40px;
+                                border-radius: 20px;
+                            }
+                        }
+
+                        .mat-card-player-wrapper{
+                            padding-bottom: 200px;
+                            .mat-card-player{
+                                height: 291px;
+                                width: 555px;
+                                background-color: #ace6e1;
+                                margin-bottom: 20px;
+                                .mat-card-header-player{
+                                    padding-bottom: 0px;
+                                    padding-top: 0px;
+                                }
+                                .mat-card-content-player{
+                                    .team-A{
+                                        float: left;
+                                        padding-left: 6px;
+                                        .avatar-A{
+                                            border: 4px solid red;
+                                        }
+        
+                                        .username{
+                                            display: block;
+                                        }
+                                    }
+
+                                    .team-B{
+                                        float: right;
+                                        padding-left: 6px;
+                                        .avatar-B{
+                                            border: 4px solid blue;
+                                        }
+        
+                                        .username{
+                                            display: block;
+                                        }
+                                    }
+                                    
+    
+                                    .join-button-wrapper{
+                                        padding-top: 183px;
+                                        padding-left: 396px;
+                                        #joinGame{
+                                            border-radius: 20px;
+                                         }
+                                    }
+                                }
+                            }
+                        }
+
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+button:focus, button:active:focus, button.active:focus{
+    outline: none !important;
+    outline-style: none !important;
+}
+

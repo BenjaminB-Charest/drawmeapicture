@@ -1,0 +1,193 @@
+<div>
+    <div class="user-profile-wrapper">
+        <div class="to-main-menu-button">
+            <button class="btn btn-warning btn-center" style="border-radius: 30px;" (click)="returnMainMenu()"><strong>← Back to Main Menu</strong></button>
+        </div>
+        <div class="profil">
+            <div class="banner">
+                <div class="username">
+                    <h3><strong>{{this.userService.currentUser.username}}</strong></h3>
+                    <h5>{{this.userService.currentUser.firstName}} {{this.userService.currentUser.lastName}} - {{tokens}} tokens</h5>
+                </div>
+                <mat-progress-bar mode="determinate" class="progress-bar"
+                    [value]='this.userService.currentUserSubject.getValue().experience * 5'>
+                </mat-progress-bar>
+                <h6 class="experience"> <strong>{{this.userService.currentUser.experience}} / 20</strong></h6>
+                <button mat-mini-fab color="primary" class="level">{{this.userService.currentUser.level}}</button>
+
+                <div class="avatar-wrapper">
+                    <img class="avatar" src={{this.userService.currentUser.avatarLink}} alt="avatar">
+                    <button mat-fab color="accent" class="avatar-button" (click)="openAvatarSelectionDialog()" matTooltip="Change Avatar">
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                </div>
+                <div class="badge-wrapper">
+                    <img src={{badges[0]}} class="badge-image1" alt="badge1">
+                    <button mat-fab color="accent" class="badge-button1" (click)="openBadgeSelectionDialog('one')" matTooltip="Change Badge">
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                    <img src={{badges[1]}} class="badge-image2" alt="badge2">
+                    <button mat-fab color="accent" class="badge-button2" (click)="openBadgeSelectionDialog('two')" matTooltip="Change Badge">
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                    <img src={{badges[2]}} class="badge-image3" alt="badge3">
+                    <button mat-fab color="accent" class="badge-button3" (click)="openBadgeSelectionDialog('three')" matTooltip="Change Badge"> 
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="tab">
+                <mat-tab-group style="width: 751px;">
+                    <mat-tab label="Settings">
+                        <br>
+                        <mat-card style="background-color: #c2eeee;">
+                            <mat-card-header>
+                                <img mat-card-avatar src="assets/Icônes/disc.svg">
+                                <mat-card-title><strong>Music</strong></mat-card-title>
+                            </mat-card-header>
+                            <div style="padding-top: 50px;">
+                                <mat-slide-toggle [checked]='this.toggleMusic' (toggleChange)='changeMusic()' matTooltip="Enable or disable Music"></mat-slide-toggle>
+                            </div>
+                        </mat-card>
+                        <br>
+                        <mat-card style="background-color: #c2eeee;">
+                            <mat-card-header>
+                                <img mat-card-avatar src="assets/Icônes/voice-command.svg">
+                                <mat-card-title><strong>Virtual Player Voice</strong></mat-card-title>
+                            </mat-card-header>
+                            <div style="padding-top: 50px;">
+                                <mat-slide-toggle [checked]='this.toggleVP' (toggleChange)='changeVPVoice()'
+                                    matTooltip="Unable or disable Virtual Robot Voice"></mat-slide-toggle>
+                            </div>
+                        </mat-card>
+                    </mat-tab>
+                    <mat-tab label="Statistics">
+                        <br>
+                        <mat-card style="background-color: #c2eeee;">
+                            <mat-card-header>
+                                <img mat-card-avatar src={{this.userService.currentUser.avatarLink}}>
+                                <mat-card-title><strong>Games Played : Classic</strong> ⇒ {{statisticsService.totalGames.getValue()}} games
+                                </mat-card-title>
+                                </mat-card-header>
+                                </mat-card>
+                                <br>
+                                <mat-card style="background-color: #c2eeee;">
+                                    <mat-card-header>
+                                        <img mat-card-avatar src={{this.userService.currentUser.avatarLink}}>
+                                        <mat-card-title><strong>Games Played : Solo</strong> ⇒ {{statisticsService.totalGamesSolo.getValue()}} games
+                                        </mat-card-title>
+                                        </mat-card-header>
+                                        </mat-card>
+                                        <br>
+                                        <mat-card style="background-color: #c2eeee;">
+                                            <mat-card-header>
+                                                <img mat-card-avatar src={{this.userService.currentUser.avatarLink}}>
+                                                <mat-card-title><strong>Victory Percentage</strong> ⇒
+                                                    {{statisticsService.victoryPercent.getValue().toFixed(2)}}%</mat-card-title>
+                                            </mat-card-header>
+                                        </mat-card>
+                                        <br>
+                                        <mat-card style="background-color: #c2eeee;">
+                                            <mat-card-header>
+                                                <img mat-card-avatar src={{this.userService.currentUser.avatarLink}}>
+                                                <mat-card-title><strong>Average Duration : Classic</strong> ⇒
+                                                    {{statisticsService.averageGameMinutes.getValue()}}
+                                                    mins {{statisticsService.averageGameSeconds.getValue()}}sec
+                                                </mat-card-title>
+                                </mat-card-header>
+                                </mat-card>
+                                <br>
+                                <mat-card style="background-color: #c2eeee;">
+                                    <mat-card-header>
+                                        <img mat-card-avatar src={{this.userService.currentUser.avatarLink}}>
+                                        <mat-card-title><strong>Average Duration : Solo</strong> ⇒
+                                            {{statisticsService.averageGameMinutesSolo.getValue()}}
+                                            mins {{statisticsService.averageGameSecondsSolo.getValue()}}sec
+                                        </mat-card-title>
+                                </mat-card-header>
+                                </mat-card>
+                                <br>
+                                <mat-card style="background-color: #c2eeee;">
+                                    <mat-card-header>
+                                        <img mat-card-avatar src={{this.userService.currentUser.avatarLink}}>
+                                <mat-card-title><strong>Total Time Played: Classic</strong> ⇒ {{totalTimeClassic}}
+                                    mins
+                                </mat-card-title>
+                                </mat-card-header>
+                                </mat-card>
+                                <br>
+                                <mat-card style="background-color: #c2eeee;">
+                                    <mat-card-header>
+                                        <img mat-card-avatar src={{this.userService.currentUser.avatarLink}}>
+                                        <mat-card-title><strong>Total Time Played: Solo</strong> ⇒ {{totalTimeSolo}}
+                                            mins
+                                        </mat-card-title>
+                            </mat-card-header>
+                        </mat-card>
+                        <br>
+                        <mat-card style="background-color: #c2eeee;">
+                            <mat-card-header>
+                                <img mat-card-avatar src={{this.userService.currentUser.avatarLink}}>
+                                <mat-card-title><strong>Solo Sprint Best Score</strong> ⇒ {{statisticsService.bestGameScoreSolo.getValue()}} points
+                                </mat-card-title>
+                                </mat-card-header>
+                                </mat-card>
+                                <br>
+                                <mat-card style="background-color: #c2eeee;">
+                                    <mat-card-header>
+                                        <img mat-card-avatar src={{this.userService.currentUser.avatarLink}}>
+                                        <mat-card-title><strong>Classic Mode Best Score</strong> ⇒ {{statisticsService.bestClassicGameScore.getValue()}}
+                                            points
+                                        </mat-card-title>
+                            </mat-card-header>
+                        </mat-card>
+                    </mat-tab>
+                    <mat-tab label="History">
+                        <br>
+                        <div *ngFor="let game of games">
+                            <mat-card style="background-color: #c2eeee;">
+                                <mat-card-header>
+                                    <img mat-card-avatar src={{determinePlacement(game.placement)}}>
+                                    <mat-card-title>{{game.gameMode}} - {{game.date|date:'medium' }}</mat-card-title>
+                                    <mat-card-subtitle>{{game.score}} points - Duration: {{game.minutes}}min {{game.seconds}}s</mat-card-subtitle>
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <div *ngFor="let player of game.players; let i = index">
+                                        <h6>
+                                            <img style="width: auto; height: 20px; padding-left: 2px; padding-right: 10px;" src={{game.avatars[i]}}>
+                                            {{player}}
+                                        </h6>
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                            <br>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Login History">
+                        <br>
+                        <div *ngFor="let log of logins">
+                            <mat-card style="background-color: #c2eeee;">
+                                <mat-card-header>
+                                    <mat-icon mat-card-avatar style="padding-top: 23px;">logout</mat-icon>
+                                    <mat-card-title>Connected: {{log.login| date:'medium'}} </mat-card-title>
+                                    <mat-card-title>Disconnected: {{log.logoff | date:'medium'}} </mat-card-title>
+                                </mat-card-header>
+                            </mat-card>
+                            <br>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+    </div>
+    <div class="channel">
+        <app-channel-panel></app-channel-panel>
+    </div>
+    <div class="pannel-detached" *ngIf="isDetached">
+        <mat-card class="mat-card">
+            <mat-card-content class="mat-card-content">
+                <h2 class="mat-card-text">Chat in Window</h2>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

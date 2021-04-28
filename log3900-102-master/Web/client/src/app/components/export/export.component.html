@@ -1,0 +1,68 @@
+<h1>Options d'exportation</h1>
+<div class="option-section">
+  <div>
+    <div class="sub-section">
+      <h5>Format d'exportation</h5>
+      <mat-radio-group name="formatList" [(ngModel)]="selectedFormat">
+        <mat-grid-list cols="3" rowHeight="30">
+          <mat-grid-tile *ngFor="let format of exportFormats">
+            <mat-radio-button [value]="format" (click)="onFormatUpdate(format)">{{ format }}</mat-radio-button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-radio-group>
+    </div>
+    <div class="sub-section">
+      <h5>Filtres</h5>
+      <mat-radio-group name="filterList" [(ngModel)]="selectedFilter">
+        <mat-grid-list cols="3" rowHeight="30">
+          <mat-grid-tile *ngFor="let filter of exportFilters">
+            <mat-radio-button  [value]="filter" (click)="onFilterUpdate(filter)">{{ filter }}</mat-radio-button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-radio-group>
+    </div>
+    <div class="sub-section">
+      <h5>Type d'exportation</h5>
+      <mat-radio-group name="typeList" [(ngModel)]="selectedExportType">
+        <mat-grid-list cols="3" rowHeight="30">
+          <mat-grid-tile *ngFor="let type of exportTypes">
+            <mat-radio-button [value]="type" (click)="onExportTypeUpdate(type)">{{ type }}</mat-radio-button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-radio-group>
+    </div>
+    <div class="sub-section">
+      <div class="details">
+        <form class="info">
+          <mat-form-field>
+            <mat-label class="text">Titre</mat-label>
+            <input matInput [(ngModel)]="this.title" (input)="onTitleUpdate($event)" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field *ngIf="this.selectedExportType === 'Courriel'">
+            <mat-label class="text">Courriel</mat-label>
+            <input matInput [(ngModel)]="this.email" (input)="onEmailUpdate($event)" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <div class="icon" [matTooltip]="'Le titre doit avoir de 3 à 16 caractères et peut contenir ' +
+           'des lettres, des chiffres, des espaces et des tirets (-).'"
+               matTooltipPosition="below">
+            <button mat-button>
+              <img src="./assets/icons/tutorial.svg">
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="sub-section">
+      <h5>Apperçu</h5>
+      <div id="preview">
+        <canvas #mydrawing ></canvas>
+        <canvas #proccessingCanas hidden></canvas>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="button-section">
+  <button mat-button id="cancel-button" (click)="onDialogClose()">Annuler</button>
+  <a #myDownload><button mat-button id="confirm-button" (click)="exportConfirmation()">Exporter</button></a>
+</div>

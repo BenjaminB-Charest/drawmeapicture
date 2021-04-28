@@ -1,0 +1,60 @@
+@import "../../../global-style/colors.scss";
+
+.wrapper {
+  padding: 15px;
+  color: black;
+
+  .title {
+    text-align: center;
+    padding-bottom: 4px;
+    padding-top: 10px;
+    margin: 0;
+  }
+
+  .mat-divider {
+    border-top-width: 1px;
+    border-top-color: $gray;
+    padding-bottom: 10px;
+  }
+
+  .mat-list-icon{
+    width: 34px;
+    height: 34px;
+  }
+
+  .mat-icon,
+  .mat-line,
+  .mat-subheader {
+    color: black !important;
+  }
+
+  .hint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+
+    .mat-button {
+      background-color: $vivid;
+      width: 80%;
+      color:black;
+    }
+
+    .mat-button:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .disabled {
+      background-color: $gray;
+    }
+
+  }
+
+  #note {
+    font-size: 0.7em;
+    text-align: center;
+  }
+
+
+}

@@ -1,0 +1,153 @@
+@import '../../../global-style/colors.scss';
+
+.mat-toolbar.mat-primary{
+    background: #ace6e1;
+    color: rgb(37, 56, 73);
+}
+
+.main-page-wrapper {
+    background-color: #c2eeee;
+    // width: 77%;
+    width: 100%;
+    height: 657px;
+
+    .container {
+        padding-top: 12px;
+        padding-right: 298px;
+        padding-bottom: 19px;
+        width: 100%;
+
+        #title {
+            h2 {
+                color: rgb(51, 121, 117);
+            }
+        }
+
+        hr {
+            border: rgb(51, 121, 117) 1px solid;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .options-area {
+            text-align: center;
+            padding-left: 20px;
+            padding-top:33px;
+            padding-bottom: 17px;
+            background-color: #d9f3f2;
+            border-radius: 20px;
+            h {
+                color: rgb(51, 121, 117);
+            }
+
+            .btn {
+                margin-top: 10px;
+                width: 40%;
+                min-height: 40%;
+                border-radius: 30px;
+            }
+        }
+    }
+}
+
+.top-nav {
+    display: flex;
+    height: 15%;
+    margin: auto;
+}
+.profile {
+    display: flex;
+    padding-right: 40px;
+
+    .as{
+        position: absolute;
+        display: inline-block;
+        width: 210px;
+        height: 55px;
+        border-radius: 30px;
+        z-index: 1000;
+    }
+    .as:hover{
+        background-color: rgba(255, 255, 255, 0.541);
+    }
+}
+
+
+.Level{
+    position: absolute;
+    float: left;
+    left:1178px;
+    top:32px;
+    color: rgb(37, 56, 73);
+}
+
+.game-title-wrapper {
+    text-align: center;
+    padding-left: 561px;
+    padding-right: 323px;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid aliceblue;
+}
+
+.profile-wrapper {
+    float: right;
+}
+
+.profile-name {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.profile-level {
+    padding-right: 30px;
+}
+
+.game-mode-button {
+    padding-bottom: 10px;
+}
+
+.home-channel-panel{
+    position: relative;
+    float: right;
+    width: 304px;
+    height: 721px;
+    background-color: #d9f3f2;
+    top: -721px;
+    left: 0px;
+}
+
+::ng-deep .cdk-overlay-backdrop{
+    right:304px;
+}
+
+.pannel-detached{
+    position: absolute;
+        top: 50px;
+        right: 254px;
+        background-color: #d9f3f2;
+        width: 50px;
+        height: 400px;
+        .mat-card{
+            background-color: #c2eeee;
+            width: 200px;
+            top:236px;
+            left: 59px;
+            .mat-card-content{
+                .mat-card-text{
+                    text-align: center;
+                    font-weight: bolder;
+                }
+            }
+        }
+}
+
+.mat-toolbar.mat-primary[_ngcontent-bbl-c168] {
+    background: #5f88c6;
+    color: #fff;
+}
+

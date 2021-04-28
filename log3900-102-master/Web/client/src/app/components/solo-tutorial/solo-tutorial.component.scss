@@ -1,0 +1,49 @@
+@import '~igniteui-angular/lib/core/styles/themes/index';
+
+.slide-wrapper{
+    max-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.carousel-wrapper{
+    max-height: 600px;
+    height: 100%;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.action-wrapper{
+    height: 40px;
+    width: 70%;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.carousel-animation-wrapper{
+    height: 1507px; // INCREASE DEPENDING ON NUMBER OF IMAGES
+    margin: 15px;
+    display: flex;
+    flex-flow:column;
+    overflow: hidden;
+    background-color: #c2eeee;
+}
+
+.igx-card{
+    box-shadow: none;
+}
+
+.mat-card{
+    width: auto;
+    height: auto;
+    background-color: #ace6e1;
+}

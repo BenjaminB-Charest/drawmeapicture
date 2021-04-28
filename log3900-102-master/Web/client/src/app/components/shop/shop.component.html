@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <mat-card class="mat-card-background">
+        <div style="text-align: end; z-index: 100;">
+            <button mat-icon-button [mat-dialog-close]>
+                <img style="width: 20px; height: 20px;" src="assets/icons/quit.svg">
+            </button>
+        </div>
+        <mat-card class="mat-card">
+            <mat-card-header>
+                <img mat-card-avatar src="assets/icons/image2vector.svg">
+                <mat-card-title><strong>Shop</strong></mat-card-title>
+                <mat-card-subtitle>Current balance: {{tokens}} tokens</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-tab-group>
+                    <mat-tab label="All" class="mat-tab">
+                        <mat-card (click)="onBuy(avatar)" mat-ripple class="mat-card-item" *ngFor="let avatar of shownAvatars" matTooltip="Buy Item">
+                            <mat-card-header>
+                                <img mat-card-avatar src={{avatar.link}}>
+                                <mat-card-title>{{avatar.name}}</mat-card-title>
+                                <mat-card-subtitle>{{avatar.price}} tokens</mat-card-subtitle>
+                            </mat-card-header>
+                        </mat-card>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </mat-card>
+    </mat-card>
+</div>

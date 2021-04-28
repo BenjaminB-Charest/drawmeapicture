@@ -1,0 +1,41 @@
+@import "../../../../global-style/colors.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: $dark-gray;
+}
+
+mat-dialog-content {
+  float: left;
+  margin: 0;
+}
+
+.error {
+  color:rgb(245, 97, 97);
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  color: whitesmoke;
+  font-size: 1em;
+}
+
+
+
+
+.button-section {
+  margin-top: 10px;
+  text-align: right;
+  background-color:$dark-gray;
+}
+
+
+
+#confirm-button {
+  background-color: $vivid;
+  outline: none;
+}

@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <mat-card class="mat-card">
+        <mat-card-header>
+            <img mat-card-avatar src="assets/icons/image2vector.svg">
+            <mat-card-title><strong>Are you sure?</strong></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="left">
+                <button mat-mini-fab matTooltip="No" [mat-dialog-close] (click)="onBack()"><mat-icon>close</mat-icon></button>
+            </div>
+            <div class="right">
+                <button mat-mini-fab matTooltip="Yes" [mat-dialog-close] (click)="onOK()"><mat-icon>done</mat-icon></button>
+            </div>  
+        </mat-card-content>
+    </mat-card>
+</div>

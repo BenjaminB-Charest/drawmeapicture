@@ -1,0 +1,52 @@
+@import "../../../global-style/colors.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color:#c2eeee;
+}
+
+mat-dialog-content {
+  float: left;
+  margin: 0;
+}
+
+h4 {
+  color:red;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h6 {
+  color: black;
+  font-size: 1em;
+}
+
+p {
+  color: black;
+}
+
+
+.button-section {
+  margin-top: 10px;
+  text-align: right;
+  background-color:#c2eeee;
+}
+
+#cancel-button {
+  color: black;
+  border-color: black;
+  border-radius: 30px;
+  width: 100px;
+  outline: none;
+
+}
+
+#confirm-button {
+  background-color: $vivid;
+  border-radius: 30px;
+  width: 100px;
+  outline: none;
+}

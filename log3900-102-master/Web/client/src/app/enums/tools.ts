@@ -1,0 +1,17 @@
+export enum Tools {
+    Spray = 'spray',
+    Ellipse = 'ellipse',
+    Eraser = 'eraser',
+    Grid = 'grid',
+    Info = 'info',
+    WordImagePair = 'wordImagePair',
+    Line = 'line',
+    None = 'none',
+    Pencil = 'pencil',
+    Pipette = 'pipette',
+    Polygon = 'polygon',
+    Rectangle = 'rectangle',
+    Settings = 'settings',
+    Text = 'text',
+    Server = 'server',
+}

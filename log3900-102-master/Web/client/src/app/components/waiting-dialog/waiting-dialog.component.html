@@ -1,0 +1,33 @@
+<div *ngIf="!isWaiting" style="background-color: #c2eeee;">
+  <div style="text-align: end; z-index: 100;">
+    <button mat-icon-button [mat-dialog-close]>
+        <img style="width: 20px; height: 20px;" src="assets/icons/quit.svg">
+    </button>
+  </div>
+  <mat-card style="background-color: #d9f3f2;">
+    <mat-card-header>
+      <img mat-card-avatar src="assets/icons/image2vector.svg">
+      <mat-card-title><strong>Please select a difficulty</strong></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="difficulty">
+        <button class="btn btn-warning btn-center" (click)="createGame(difficultyList.Easy)" style="border-radius: 30px;"><strong>Easy</strong></button>
+        <button class="btn btn-warning btn-center" (click)="createGame(difficultyList.Normal)" style="border-radius: 30px;"><strong>Normal</strong></button>
+        <button class="btn btn-warning btn-center" (click)="createGame(difficultyList.Hard)" style="border-radius: 30px;"><strong>Hard</strong></button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div *ngIf="isWaiting" style="background-color: #c2eeee;">
+  <mat-card style="background-color: #d9f3f2;">
+    <mat-card-header>
+      <img mat-card-avatar src="assets/icons/image2vector.svg">
+      <mat-card-title><strong>Starting a Solo Sprint</strong></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

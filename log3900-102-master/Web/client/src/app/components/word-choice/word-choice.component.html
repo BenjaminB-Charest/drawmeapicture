@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <mat-card class="mat-card">
+        <mat-card-header>
+            <img mat-card-avatar src="assets/icons/image2vector.svg">
+            <mat-card-title><strong>Please choose a word:</strong></mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="mat-content">
+            <div class="left">
+                <button class="button" mat-raised-button color="accent" [mat-dialog-close] (click)="onSelect('one')"><strong>{{words[0]}}</strong></button>
+            </div>
+            <div class="middle">
+                <button class="button" mat-raised-button color="accent" [mat-dialog-close] (click)="onSelect('two')"><strong>{{words[1]}}</strong></button>
+            </div>
+            <div class="right">
+                <button class="button" mat-raised-button color="accent" [mat-dialog-close] (click)="onSelect('three')"><strong>{{words[2]}}</strong></button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

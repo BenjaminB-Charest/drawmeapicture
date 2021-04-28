@@ -1,0 +1,27 @@
+<h4>Create a new Drawing</h4>
+<div class="settings-wrapper">
+  <div class="settings-section">
+    <h6>Size</h6>
+    <div>
+      <label for="width">Width : </label>
+      <input type="number" id="width" min="1"  oninput="validity.valid||(value='');" [value]="workspaceSizeX" (input) = "setcanvasSizeX($event)">
+    </div>
+    <div>
+      <label for="height">Height : </label>
+      <input type="number" id="height" min="1" oninput="validity.valid||(value='');" [value]="workspaceSizeY" (input) = "setcanvasSizeY($event)">
+    </div>
+  </div>
+  <div class="settings-section">
+    <h6>Background color</h6>
+    <div class="color-preview">
+      <button id="color-button"
+      (click)="onColorSelect()"
+      [style.background-color]="previewColor.getHex()"></button>
+    </div>
+  </div>
+</div>
+
+<div class="button-section">
+  <button mat-button id="cancel-button" (click)="onCloseDialog()">Back</button>
+  <button mat-button id="confirm-button" (click)="onConfirm()">Confirm</button>
+</div>

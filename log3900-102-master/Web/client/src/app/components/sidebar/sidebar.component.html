@@ -1,0 +1,106 @@
+<div id="wrapper">
+  <div id="upper-icons">
+    <div class="tool-group">
+      <div class="left-column">
+        <div class="icon" *ngIf="(isDrawing && !isOnAccelerate && gameMode !== 'solo')">
+            <button mat-button
+                  [matTooltip]="this.toolSelectorService.getPencil().englishName"
+                  matTooltipPosition="after"
+                  aria-label="pencil-tooltip"
+                  (click)="selectTool(toolsList.Pencil)"
+                  [ngClass]="{'clicked': currentTool === 'pencil',
+            'not-clicked': currentTool !== 'pencil'}">
+            <img src="./assets/icons/pencil.svg">
+            </button>
+            <div class="icon" *ngIf="isDrawing">
+              <button mat-button
+                      [matTooltip]="this.toolSelectorService.getEraser().englishName"
+                      matTooltipPosition="after"
+                      aria-label="eraser-tooltip"
+                      (click)="selectTool(toolsList.Eraser)"
+                      [ngClass]="{'clicked': currentTool === 'eraser',
+                'not-clicked': currentTool !== 'eraser'}">
+                <img src="./assets/icons/eraser.svg">
+              </button>
+            </div>
+            <div class="icon" *ngIf="isDrawing">
+              <button mat-button
+                      [matTooltip]="this.toolSelectorService.getGrid().englishName"
+                      matTooltipPosition="after"
+                      aria-label="grid-tooltip"
+                      (click)="selectTool(toolsList.Grid)"
+                      [ngClass]="{'clicked': currentTool === 'grid',
+                'not-clicked': currentTool !== 'grid'}">
+                <img src="./assets/icons/grid.svg">
+              </button>
+          </div>
+        </div>
+        <div class="icon" *ngIf="gameMode !== 'wordImagePair'">
+          <button mat-button
+                  [matTooltip]="this.toolSelectorService.getNone().englishName"
+                  matTooltipPosition="after"
+                  aria-label="info-tooltip"
+                  (click)="selectTool(toolsList.Info)"
+                  [ngClass]="{'clicked': currentTool === 'info',
+            'not-clicked': currentTool !== 'info'}">
+            <img src="./assets/icons/game-info3.svg">
+          </button>
+        </div>
+        <div class="icon" *ngIf="gameMode === 'wordImagePair'">
+          <button mat-button
+          [matTooltip]="this.toolSelectorService.getNonee().englishName"
+          matTooltipPosition="after"
+          aria-label="info-tooltip"
+          (click)="selectTool(toolsList.WordImagePair)"
+          [ngClass]="{'clicked': currentTool === 'wordImagePair',
+          'not-clicked': currentTool !== 'wordImagePair'}">
+          <img style="position: absolute; left: 14px; top: 12px;" src="./assets/icons/done_black_24dp.svg">
+          </button>
+        </div>
+      </div>
+    </div>
+    <hr noshade size="1">
+  <div id="lower-icons">
+    <hr noshade size="1">
+    <div class="bottom">
+      <div class="left-column">
+        <div *ngIf="gameMode !== 'solo'">
+          <button mat-button
+          [disabled]="toolSelectorService.disableUndo || isOnAccelerate || !isDrawing"
+          (click)="toolSelectorService.memory.undo()" matTooltip="Undo">
+          <mat-icon >undo</mat-icon>
+          </button>
+        </div>
+        <div *ngIf="gameMode !== 'solo'">
+          <button mat-button
+          [disabled]="toolSelectorService.disableRedo || isOnAccelerate || !isDrawing"
+          (click)="toolSelectorService.memory.redo()" matTooltip="Redo">
+          <mat-icon>redo</mat-icon>
+        </button>
+        </div>
+        <div>
+          <button mat-button matTooltip="Mute Music" (click)="toggleMusic()">
+            <img [src]="musicOn ? 'assets/icons/music.svg': 'assets/icons/music_off.svg'">
+          </button>
+        </div>
+        <div *ngIf="gameMode !== 'wordImagePair'">
+          <button mat-button matTooltip="Mute Virtual Player" (click)="toggleVirtualPlayer()">
+            <img style="width: 28px; height: 28px; float: left; position: absolute; top: 11px; left: 10px;"
+              [src]="virtualPlayerSpeakingOn ? 'assets/icons/robot_voice_on.svg' : 'assets/icons/robot_voice_off.svg'">
+          </button>
+        </div>
+        <div>
+          <button mat-button (click)="openTutorial()" matTooltip="Open Tutorial">
+            <mat-icon>helpl_outline</mat-icon>
+          </button>
+        </div>
+        <div>
+          <button mat-button (click)="goHome()" matTooltip="Quit">
+            <mat-icon>reply_all</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

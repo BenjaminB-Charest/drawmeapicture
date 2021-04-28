@@ -1,0 +1,17 @@
+<div id="container">
+    <form id="line-form">
+        <label class="title" id="thickness">Thickness</label>
+        <mat-slider
+            id="thickness-slider"
+            name="thickness-slider"
+            disabled="false"
+            [min]="SLIDER_MINIMUM"
+            [max]="SLIDER_MAXIMUM"
+            step="1"
+            thumbLabel="true"
+            tickInterval="false"
+            [(ngModel)]="service.thickness"
+            vertical="false">
+        </mat-slider>
+    </form>
+</div>

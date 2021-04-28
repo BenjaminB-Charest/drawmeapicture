@@ -1,0 +1,39 @@
+<div class="login-form-wrapper">
+    <div class="login-form-header">
+        <h4 class="login-form-title">Log In</h4>
+        <br>
+    </div>
+    <form class="login-form" [formGroup]="loginForm">
+    <mat-form-field appearance="legacy">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Ex.wonderwoman" [formControl]="loginUsername" required>
+            <mat-icon matSuffix>badge</mat-icon>
+            <mat-error *ngIf="loginUsername.invalid">{{loginErrors.nonValidUsernameError}}</mat-error>
+    </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput placeholder="Ex.abc123" [formControl]="loginPassword" required>
+            <mat-icon matSuffix>no_encryption</mat-icon>
+            <mat-error *ngIf="loginPassword.invalid">{{loginErrors.loginPasswordError}}</mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="!usernamePasswordMatch">{{loginErrors.usernamePasswordNotMatchError}}</mat-error>
+        <mat-error *ngIf="!accountExists">{{loginErrors.accountExistsError}}</mat-error>
+        <mat-error *ngIf="emptyPassword">{{loginErrors.emptyPasswordError}}</mat-error>
+        <mat-error *ngIf="emptyUsername">{{loginErrors.emptySpaceUsernameError}}</mat-error>
+        <br>
+        <br>
+        <br>
+        <div class="login-button">
+            <button class="btn btn-warning" id="login-button" role="button" [disabled]="loginForm.invalid" (click)="onLogin()">Log In</button>
+        </div>
+        <br>
+        <br>
+        <div class="sign-in-button">
+            <button  mat-button (click)="openLoginDialog()">Don't have an account? Sign Up →</button>
+        </div>
+        </form>
+</div>
+
+

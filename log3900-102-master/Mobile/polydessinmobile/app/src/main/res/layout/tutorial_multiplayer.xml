@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tutorial_multiplayer"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenuActivity"
+    android:background="@color/colorPrimaryDark"
+    android:padding="30dp">
+
+    <ImageView
+        android:id="@+id/app_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/app_logo"/>
+
+    <TextView
+        android:id="@+id/title_description_multiplayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tutorial"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_alignTop="@id/app_icon"
+        android:layout_alignBottom="@id/app_icon"
+        android:gravity="center_vertical"
+        android:layout_toEndOf="@id/app_icon"
+        android:layout_marginStart="20dp">
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/close_tutorial_button_multiplayers"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_quit"
+        android:scaleType="fitXY"
+        android:padding="10dp"
+        android:layout_centerVertical="true">
+    </ImageButton>
+
+
+    <RelativeLayout
+        android:id="@+id/tutorial_pop_up_multiplayer"
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        android:layout_below="@+id/title_description_multiplayer"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:id="@+id/information_tutorial_multiplayer"
+            android:layout_width="match_parent"
+            android:layout_height="750dp"
+            android:background="@color/colorPrimaryLight">
+
+            <ImageView
+                android:id="@+id/tutorial_images_multiplayer"
+                android:layout_width="400dp"
+                android:layout_height="600dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/text_description_multiplayer"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:layout_below="@+id/tutorial_images_multiplayer"
+                android:layout_marginTop="20dp">
+            </TextView>
+
+            <ImageButton
+                android:id="@+id/next_button_multiplayer"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/colorAccent"
+                android:src="@drawable/ic_next"
+                android:background="@drawable/rounded_corners_button_yellow"
+                android:scaleType="fitXY"
+                android:padding="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/previous_button_multiplayer"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/colorAccent"
+                android:src="@drawable/ic_arrow_back"
+                android:background="@drawable/rounded_corners_button_yellow"
+                android:scaleType="fitXY"
+                android:padding="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible"
+                android:layout_centerVertical="true">
+            </ImageButton>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <div style="text-align: end; z-index: 100;">
+        <button mat-icon-button [mat-dialog-close] [disabled]="this.channelPanelService.shouldQuitButtonDisableSubject.getValue()" (click)="onExit()">
+            <img style="width: 20px; height: 20px;" src="assets/icons/quit.svg">
+        </button>
+    </div>
+
+    <mat-card class="mat-card">
+        <mat-card-header>
+            <img mat-card-avatar src="assets/icons/image2vector.svg">
+            <mat-card-title><strong>Please select an option</strong></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-form-field>
+                <mat-label>New Channel Name</mat-label>
+                <input matInput placeholder="Ex. Squad" [(ngModel)]="name" [disabled]="this.channelPanelService.shouldQuitButtonDisableSubject.getValue()">
+                <mat-hint>Maximum 15 letters</mat-hint>
+            </mat-form-field>
+            <button mat-mini-fab matTooltip="Add Channel" (click)="addChannel()" [disabled]="shouldAddChannelDisable()"><mat-icon>add</mat-icon></button>
+            <mat-form-field>
+                <mat-label>Join with SharedKey</mat-label>
+                <input matInput placeholder="Ex. WUUIZ7" [(ngModel)]="key" [disabled]="this.channelPanelService.shouldQuitButtonDisableSubject.getValue()">
+                <mat-hint>Maximum 6 letters</mat-hint>
+            </mat-form-field>
+            <button mat-mini-fab matTooltip="Join Channel" (click)="joinChannel()" [disabled]="shouldJoinChannelDisable()"><mat-icon>merge_type</mat-icon></button>
+        </mat-card-content>
+    </mat-card>
+</div>
+

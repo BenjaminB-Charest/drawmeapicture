@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:background="@color/colorPrimaryLight">
+
+        <ImageView
+            android:id="@+id/game_mode_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_gamemode"
+            android:layout_alignTop="@id/game_mode"
+            android:layout_alignBottom="@id/game_mode"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/game_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mode :"
+            android:textSize="30sp"
+            android:layout_toEndOf="@id/game_mode_icon"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:id="@+id/game_mode_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="no mode"
+            android:textSize="30sp"
+            android:layout_alignStart="@+id/game_final_score_value"/>
+        <ImageView
+            android:id="@+id/game_date_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_date"
+            android:layout_alignTop="@id/game_date"
+            android:layout_alignBottom="@id/game_date"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/game_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date :"
+            android:layout_below="@+id/game_mode"
+            android:textSize="30sp"
+            android:layout_toEndOf="@id/game_mode_icon"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:id="@+id/game_date_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01/01/2000, 23:59"
+            android:layout_below="@+id/game_mode"
+            android:layout_alignStart="@id/game_final_score_value"
+            android:textSize="30sp"/>
+        <ImageView
+            android:id="@+id/players_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_players"
+            android:layout_alignTop="@id/game_players"
+            android:layout_alignBottom="@id/game_players"/>
+        <TextView
+            android:id="@+id/game_players"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Players :"
+            android:layout_below="@+id/game_date"
+            android:textSize="30sp"
+            android:layout_toEndOf="@id/players_icon"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:id="@+id/game_players_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="player1, player2"
+            android:layout_below="@+id/game_date"
+            android:layout_alignStart="@id/game_final_score_value"
+            android:textSize="30sp"/>
+        <ImageView
+            android:id="@+id/score_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_trophy"
+            android:layout_alignTop="@id/game_final_score"
+            android:layout_alignBottom="@id/game_final_score"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/game_final_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Final score :"
+            android:layout_below="@+id/game_players_value"
+            android:textSize="30sp"
+            android:layout_toEndOf="@id/score_icon"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:id="@+id/game_final_score_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0pts"
+            android:layout_alignTop="@id/game_final_score"
+            android:layout_alignBottom="@id/game_final_score"
+            android:layout_toEndOf="@id/game_final_score"
+            android:layout_marginStart="10dp"
+            android:textSize="30sp"/>
+        <ImageView
+            android:id="@+id/time_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_time"
+            android:layout_alignTop="@id/game_time"
+            android:layout_alignBottom="@id/game_time"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/game_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration :"
+            android:layout_below="@+id/game_final_score"
+            android:textSize="30sp"
+            android:layout_toEndOf="@id/time_icon"
+            android:layout_marginStart="10dp"/>
+        <TextView
+            android:id="@+id/game_time_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2min"
+            android:layout_below="@+id/game_final_score"
+            android:layout_alignStart="@id/game_final_score_value"
+            android:textSize="30sp"/>
+
+        <ImageView
+            android:id="@+id/position_icon"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/ic_first" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

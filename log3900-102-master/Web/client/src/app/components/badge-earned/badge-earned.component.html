@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <mat-card style="height: 300px;">
+    <mat-card-header>
+      <img mat-card-avatar src="assets/icons/image2vector.svg">
+      <mat-card-title><strong>You have earned a new badge!</strong></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div style="float: left; padding-top: 32px; width: 248px;">
+        <h4 style="padding-bottom: 21px;"><strong>Description:</strong></h4>
+        <p>{{badgeDescription}}</p>
+      </div>
+      <div style="float: right; padding-right: 50px; padding-top: 23px; text-align: center;">
+        <img style="width: 150px; height: 150px;" src="{{badgeURL}}">
+        <h4 style="text-align: center; padding-top: 10px;"><strong>{{badgeName}}</strong></h4>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <div style="padding-left: 215px; padding-top: 7px;">
+    <button class="btn btn-warning btn-center" style="width: 150px;  border-radius: 30px;"
+      [mat-dialog-close]><strong>Cool!</strong></button>
+  </div>
+</div>

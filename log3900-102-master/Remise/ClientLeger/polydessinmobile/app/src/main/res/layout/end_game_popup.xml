@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:id="@+id/game_popup_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/app_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/app_logo"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/game_over_classic_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Game Over !"
+            android:textSize="30sp"
+            android:layout_toEndOf="@id/app_icon"
+            android:layout_alignTop="@id/app_icon"
+            android:layout_alignBottom="@id/app_icon"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="2dp"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/game_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/game_popup_info"
+        android:textSize="24sp"
+        android:text="It's a tie! Both teams got 0 points"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_players_end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:padding="4dp"
+        tools:listitem="@layout/player_end_game_item"
+        android:layout_below="@+id/game_result"/>
+    <android.widget.Button
+        android:id="@+id/ok_end_game_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:background="@drawable/rounded_corners_empty_background"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_alignEnd="@id/recycler_view_players_end"
+        android:layout_below="@id/recycler_view_players_end"
+        android:paddingHorizontal="10dp"
+        android:textStyle="normal"
+        android:textSize="24sp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="10dp"/>
+</RelativeLayout>

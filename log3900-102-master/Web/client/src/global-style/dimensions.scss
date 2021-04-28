@@ -1,0 +1,14 @@
+@import '../styles.scss';
+
+// Buttons
+@mixin btn-dimensions {
+  height:40px;
+  width:40px;
+}
+
+// Main components
+$full-height: 100vh;
+
+// Slider
+$slider-bubble-margin: 20px;
+$slider-width: 100%;

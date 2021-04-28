@@ -1,0 +1,86 @@
+<div>
+  <mat-toolbar color="primary" class="md-tall">
+      <div class="top-nav-content-wrapper">
+          <button mat-icon-button class="example-icon" (click)="onLogout()" aria-label="Example icon-button with menu icon" matTooltip="Log Out">
+              <mat-icon>logout</mat-icon>
+              <strong>Log Out</strong>
+          </button>
+      </div>
+      <div class="game-title-wrapper">
+          <h2 class="game-title"><strong>Draw me a picture!</strong></h2>
+      </div>
+      <div class="profile">
+        <a class="as" routerLink='/profile' matTooltip="Edit Profile"></a>
+        <img src="{{ this.userService.currentUser.avatarLink }}" alt="avatar" class="avatar" />
+        <div style="float: left;">
+          <h3 class="profile-name"><strong>{{ this.userService.currentUser.username }}</strong></h3>
+          <h5 class="Level"><strong>Level {{this.userService.currentUser.level}}</strong></h5>
+          <div style="width: 10px;">
+            <mat-icon style="float: right; top: 36px; position: absolute; left: 1257px;">settings</mat-icon>
+            <!-- <p style="float: right; top: 32px; position: absolute; left: 1260px; font-size: 15px; color: rgb(163, 167, 170);">Edit Profile</p> -->
+          </div>
+        </div>
+        <div style="float: right; position: absolute; left: 954px; top: 18px;">
+          <div style="padding-top: 0;">
+            <img src="assets/images/money.svg" style="float: left; width: 53px; height: 31px; position: absolute; right: 50px; left: 0px;">
+          </div>
+          <h5 style="position: absolute; right: -94px; top: 0px;"><strong>{{tokens}}</strong></h5>
+        </div>
+      </div>
+  </mat-toolbar>
+  <div class="main-page-wrapper">
+    <div class="container">
+      <div style="text-align: center; padding-bottom: 10px;">
+        <img src="assets/icons/image2vector.svg" style="width: 150px; height: 93px; padding-left: 18px;">
+      </div>
+      <div class="options-area">
+          <div>
+            <div class="game-mode-button">
+              <button class="btn btn-warning btn-center" (click)="openClassicModeDialog()">
+                <strong>Classic Mode</strong>
+              </button>
+            </div>
+            <div class="game-mode-button" matTooltip="Level 2 Required!" [matTooltipDisabled]="!this.userService.canPlaySoloGame.getValue()">
+              <button class="btn btn-warning btn-center" [disabled]='this.userService.canPlaySoloGame.getValue()'
+                (click)="startSoloSprint()">
+                <strong>Solo Sprint</strong>
+              </button>
+            </div>
+            <div class="game-mode-button">
+              <button class="btn btn-warning btn-center" (click)="openWordImagePairDialog()">
+                <strong>Create your own Word-Image Pair</strong>
+              </button>
+            </div>
+            <div class="game-mode-button">
+              <button class="btn btn-warning btn-center" (click)="openShopDialog()">
+                <strong>Shop</strong>
+              </button>
+            </div>
+            <div class="game-mode-button">
+              <button class="btn btn-warning btn-center" (click)="openLeaderboard()">
+                <strong>Leaderboard</strong>
+              </button>
+            </div>
+            <div class="game-mode-button">
+              <button class="btn btn-warning btn-center" (click)="openTutorialDialog()">
+                <strong>Tutorial</strong>
+              </button>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="home-channel-panel">
+  <app-channel-panel></app-channel-panel>
+</div>
+
+<div class="pannel-detached" *ngIf="isDetached">
+  <mat-card class="mat-card">
+      <mat-card-content class="mat-card-content">
+          <h2 class="mat-card-text">Chat in Window</h2>
+      </mat-card-content>
+  </mat-card>
+</div>
+
+
+

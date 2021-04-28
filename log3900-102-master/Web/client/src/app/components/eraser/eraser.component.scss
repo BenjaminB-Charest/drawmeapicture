@@ -1,0 +1,58 @@
+@import '../../../global-style/colors.scss';
+@import '../../../global-style/dimensions.scss';
+
+#container {
+  color: black;
+  padding: 30px 40px;
+  padding-bottom: 0px;
+
+  .title {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style: none;
+    display: inline;
+  }
+
+  mat-form-field {
+    margin-bottom: 50px;
+  }
+
+  .mat-slider {
+    margin-top: $slider-bubble-margin;
+    width: $slider-width;
+  }
+
+  .head-group {
+    padding-bottom: 20px;
+  }
+
+  .group {
+    padding: 10px 0 40px 0;
+  }
+
+}
+
+::ng-deep .mat-slider-ticks-container {
+  background-color: grey;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-label {
+  color: white;
+  font-size: 20px;
+}
+
+::ng-deep .mat-select-value {
+  color: white;
+}
+
+.mat-select {
+  padding-top: 20px;
+  border-bottom-color: $medium;
+}
+
+::ng-deep .mat-select-arrow {
+  color: $vivid;
+}

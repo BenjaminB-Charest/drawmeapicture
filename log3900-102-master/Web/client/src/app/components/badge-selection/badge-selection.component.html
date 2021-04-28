@@ -1,0 +1,118 @@
+<div class="badge-selection-wrapper">
+    <div class="badge-selection-title-wrapper">
+        <h1 class="badge-selection-title">Select badge</h1>
+        <img class="preview-badge" src={{badgeURL}}>
+    </div>
+    <div style="display: flex;">
+        <div matTooltip={{badgeNameArray[0]}} [matTooltipDisabled]="badge0">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge0, 'selected': badge0Selected}"
+                [disabled]='badge0 || badge0Selected' 
+                src="assets/newbadges/002-trophy.svg" (click)="loadPreviewBadge('one')">
+        </div>
+        <div matTooltip={{badgeNameArray[1]}} [matTooltipDisabled]="badge1">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge1, 'selected': badge1Selected}"
+                [disabled]='badge1|| badge1Selected'
+                src="assets/newbadges/004-first.svg" (click)="loadPreviewBadge('two')">
+        </div>
+        <div matTooltip={{badgeNameArray[2]}} [matTooltipDisabled]="badge2">
+            <input style="width:90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge2, 'selected': badge2Selected}"
+                [disabled]='badge2|| badge2Selected'
+                src="assets/newbadges/007-medal.svg" (click)="loadPreviewBadge('three')">
+        </div>
+        <div matTooltip={{badgeNameArray[3]}} [matTooltipDisabled]="badge3">
+            <input style="width:90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge3, 'selected': badge3Selected}"
+                [disabled]='badge3|| badge3Selected'
+                src="assets/newbadges/008-coat-of-arms.svg" (click)="loadPreviewBadge('four')">
+        </div>
+        <div matTooltip={{badgeNameArray[4]}} [matTooltipDisabled]="badge4">
+            <input style="width:90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge4, 'selected': badge4Selected}"
+                [disabled]='badge4|| badge4Selected'
+                src="assets/newbadges/011-award.svg" (click)="loadPreviewBadge('five')">
+        </div>
+    </div>
+    <div style="display: flex;">
+        <div matTooltip={{badgeNameArray[5]}} [matTooltipDisabled]="badge5">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge5, 'selected': badge5Selected}"
+                [disabled]='badge5|| badge5Selected'
+                src="assets/newbadges/015-gold-medal.svg" (click)="loadPreviewBadge('six')">
+        </div>
+        <div matTooltip={{badgeNameArray[6]}} [matTooltipDisabled]="badge6">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge6, 'selected': badge6Selected}"
+                [disabled]='badge6|| badge6Selected'
+                src="assets/newbadges/016-silver-medal-1.svg" (click)="loadPreviewBadge('seven')">
+        </div>
+        <div matTooltip={{badgeNameArray[7]}} [matTooltipDisabled]="badge7">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge7, 'selected': badge7Selected}"
+                [disabled]='badge7|| badge7Selected'
+                src="assets/newbadges/018-standard-1.svg" (click)="loadPreviewBadge('eight')">
+        </div>
+        <div matTooltip={{badgeNameArray[8]}} [matTooltipDisabled]="badge8">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge8, 'selected': badge8Selected}"
+                [disabled]='badge8|| badge8Selected'
+                src="assets/newbadges/024-shield.svg" (click)="loadPreviewBadge('nine')">
+        </div>
+        <div matTooltip={{badgeNameArray[9]}} [matTooltipDisabled]="badge9">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge9, 'selected': badge9Selected}"
+                [disabled]='badge9|| badge9Selected'
+                src="assets/newbadges/035-badge-3.svg" (click)="loadPreviewBadge('ten')">
+        </div>
+    </div>
+    <div style="display: flex;">
+        <div matTooltip={{badgeNameArray[10]}} [matTooltipDisabled]="badge10">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge10, 'selected': badge10Selected}"
+                [disabled]='badge10|| badge10Selected'
+                src="assets/newbadges/036-star-1.svg" (click)="loadPreviewBadge('eleven')">
+        </div>
+        <div matTooltip={{badgeNameArray[11]}} [matTooltipDisabled]="badge11">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge11, 'selected': badge11Selected}"
+                [disabled]='badge11|| badge11Selected'
+                src="assets/newbadges/038-star-3.svg" (click)="loadPreviewBadge('twelve')">
+        </div>
+        <div matTooltip={{badgeNameArray[12]}} [matTooltipDisabled]="badge12">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge12, 'selected': badge12Selected}"
+                [disabled]='badge12|| badge12Selected'
+                src="assets/newbadges/040-diploma-1.svg" (click)="loadPreviewBadge('thirteen')">
+        </div>
+        <div matTooltip={{badgeNameArray[13]}} [matTooltipDisabled]="badge13">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge13, 'selected': badge13Selected}"
+                [disabled]='badge13|| badge13Selected'
+                src="assets/newbadges/004-certificate.svg" (click)="loadPreviewBadge('fourteen')">
+        </div>
+        <div matTooltip={{badgeNameArray[14]}} [matTooltipDisabled]="badge14">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge14, 'selected': badge14Selected}"
+                [disabled]='badge14|| badge14Selected'
+                src="assets/newbadges/010-badge.svg" (click)="loadPreviewBadge('fifteen')">
+        </div>
+    </div>
+    <div style="display: flex;">
+        <div matTooltip={{badgeNameArray[15]}} [matTooltipDisabled]="badge15">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge15, 'selected': badge15Selected}"
+                [disabled]='badge15|| badge15Selected'
+                src="assets/newbadges/034-money.svg" (click)="loadPreviewBadge('sixteen')">
+        </div>
+        <div matTooltip={{badgeNameArray[16]}} [matTooltipDisabled]="badge16">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge16, 'selected': badge16Selected}"
+                [disabled]='badge16|| badge16Selected'
+                src="assets/newbadges/040-money-bag.svg" (click)="loadPreviewBadge('seventeen')">
+        </div>
+        <div matTooltip={{badgeNameArray[17]}} [matTooltipDisabled]="badge17">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge17, 'selected': badge17Selected}"
+                [disabled]='badge17|| badge17Selected' src="assets/newbadges/006-trophy.svg" (click)="loadPreviewBadge('eighteen')">
+        </div>
+        <div matTooltip={{badgeNameArray[18]}} [matTooltipDisabled]="badge18">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge18, 'selected': badge18Selected}"
+                [disabled]='badge18|| badge18Selected' src="assets/newbadges/019-trophy-1.svg"
+                (click)="loadPreviewBadge('nineteen')"> 
+        </div>
+        <div matTooltip={{badgeNameArray[19]}} [matTooltipDisabled]="badge19">
+            <input style="width: 90px; height: 90px; border-radius: 50%; border: solid 5px whitesmoke;" type="image" [ngClass]="{'grayScale':badge19, 'selected': badge19Selected}"
+                [disabled]='badge19|| badge19Selected' src="assets/newbadges/033-flag.svg" (click)="loadPreviewBadge('twenty')">
+        </div>
+    </div>
+    <div class="confirm-choice-wrapper">
+        <button class="cancel-button" [mat-dialog-close]="true" (click)="onCancel()">Cancel</button>
+        <button class="ok-button btn-warning" [mat-dialog-close]="true" (click)="onOK()">OK</button>
+    </div>
+</div>
+
+

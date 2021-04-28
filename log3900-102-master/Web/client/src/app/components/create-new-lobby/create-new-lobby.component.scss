@@ -1,0 +1,96 @@
+.create-new-lobby-wrapper {
+    width: auto;
+    .create-new-lobby-content-wrapper{
+        .mat-card-background{
+            background-color: #c2eeee;
+            height: 526px;
+            .mat-card{
+                background-color: #d9f3f2;
+                .mat-card-header{
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                    .mat-card-title{
+                        font-weight: bolder;
+                    }
+                    .mat-card-subtitle{
+
+                    }
+                }
+
+                .mat-card-content{
+                    padding-left: 20px;
+                    padding-right: 20px;
+
+                    .game-name{
+                        padding-bottom: 20px;
+                    }
+
+                    .game-privacy{
+                        .radio-button{
+
+                            margin-right: 20px;
+                        }
+                    }
+
+                    .game-difficulty{
+                        padding-top: 2px;
+                    }
+                }
+
+                .quit-and-create-button{
+                    #quit-button{
+                        border-radius: 20px;
+                        margin-right: 40px;
+                    }
+                    #create-button{
+                        border-radius: 20px;
+                    }
+                }
+
+                .error-message{
+                }
+            }
+        }
+    }
+}
+::ng-deep.mat-form-field.mat-focused .mat-form-field-label{
+    color: #8b8b8b !important;
+}
+
+::ng-deep.mat-form-field-appearance-standard .mat-form-field-underline{
+    color: #8b8b8b !important;
+}
+
+::ng-deep.mat-focused .mat-form-field-label{
+    color: #8b8b8b !important;
+
+}
+
+::ng-deep.mat-form-field-ripple {
+    background-color: #8b8b8b !important;
+}
+
+.waiting {
+  overflow: hidden;
+}
+
+.loading {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  mat-spinner{
+    margin: auto;
+  }
+}
+
+::ng-deep.mat-progress-spinner circle, .mat-spinner circle{
+    stroke: #c2eeee;
+} 
+
+button:focus, button:active:focus, button.active:focus{
+    outline: none !important;
+    outline-style: none !important;
+}
+

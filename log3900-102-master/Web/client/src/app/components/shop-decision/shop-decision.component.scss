@@ -1,0 +1,24 @@
+.wrapper{
+    button:focus, button:active:focus, button.active:focus{
+        outline: none !important;
+        outline-style: none !important;
+    }
+    .mat-card-background{
+        background-color: #c2eeee;
+        .mat-card{
+            margin: 10px;
+            padding-top: 20px;
+            padding-bottom: 80px;
+            .left{
+                float: left;
+                padding-top: 10px;
+                padding-left: 30px;
+            }
+            .right{
+                float:right;
+                padding-top: 10px;
+                padding-right: 30px;
+            }
+        }
+    }
+}

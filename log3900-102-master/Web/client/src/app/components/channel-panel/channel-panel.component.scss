@@ -1,0 +1,87 @@
+@import "../../../global-style/colors.scss";
+
+.wrapper {
+  background-color: #d9f3f2;
+  min-height: 100%;
+
+  // .mat-list-base .mat-list-item .mat-list-icon, .mat-list-base .mat-list-option .mat-list-icon {
+  //   color: whitesmoke !important;
+  // }
+
+  .mat-icon,
+  .mat-line,
+  .mat-subheader {
+    color: black !important;
+  }
+
+  .header {
+    #title {
+      color: black;
+      background-color: #c2eeee;
+      padding-left: 73px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin: 0;
+    }
+
+    .mat-icon{
+      color: white;
+    }
+
+    .mat-divider {
+      border-top-width: 1px;
+      border-top-color: $gray;
+      padding-bottom: 10px;
+    }
+  }
+
+  .add-channel{
+    left: 50px;
+  }
+
+  .delete-channel{
+    left: 100px;
+  }
+
+  .window-button{
+    left: 147px;
+  }
+
+  .color-wrapper {
+    width: 100%;
+    margin: 0 auto;
+
+    .color-panel {
+      position: absolute;
+      width: 300px;
+      bottom: 0px;
+      background-color: $dark;
+      z-index: 9;
+      //max-height: 40%;
+
+      .mat-expansion-panel {
+        background-color: #ace6e1;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        .mat-icon {
+          color: black !important;
+        }
+
+        .mat-expansion-panel-header-description,
+        .mat-expansion-panel-header-title {
+          margin: auto;
+
+          h6 {
+            color: black;
+          }
+
+          .inner-color {
+            width: 100%;
+            background-color: $extra-light;
+          }
+        }
+      }
+    }
+  }
+}

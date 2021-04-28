@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <mat-card class="mat-card-background">
+        <mat-card class="mat-card">
+            <mat-card-header>
+                <img mat-card-avatar src="assets/icons/image2vector.svg">
+                <mat-card-title><strong>Are you sure you want to buy this item?</strong></mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="left">
+                    <button mat-fab [mat-dialog-close]>
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+                <div class="right">
+                    <button mat-fab [mat-dialog-close] (click)="onDone()">
+                        <mat-icon>check</mat-icon>
+                    </button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-card>
+</div>

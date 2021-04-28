@@ -1,0 +1,82 @@
+@import "../../../global-style/colors.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: $dark-gray;
+}
+
+h4 {
+  color:whitesmoke;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.settings-wrapper {
+  float: left;
+
+  .settings-section {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 175px;
+
+    h6 {
+      color: whitesmoke;
+      font-size: 1em;
+    }
+
+    label {
+      width: 50%;
+      color: whitesmoke;
+    }
+
+    input {
+      width: 50%;
+      background-color: $dark-gray;
+      color: whitesmoke;
+      outline: none;
+      border-style: solid;
+      border-width: 2px;
+      border-color: $gray;
+      text-align: center;
+    }
+
+    /* Disable number field arrows on Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Disable number field arrows on Firefox */
+    input[type=number] {
+      -moz-appearance:textfield;
+    }
+
+    #color-button {
+      width: 55px;
+      height: 55px;
+      font-size: 12px;
+      padding: 0;
+    }
+  }
+}
+
+.button-section {
+  margin-top: 10px;
+  text-align: right;
+  background-color:$dark-gray;
+
+  #cancel-button {
+    color: whitesmoke;
+    outline: none;
+  }
+
+  #confirm-button {
+    background-color: $vivid;
+    outline: none;
+  }
+}

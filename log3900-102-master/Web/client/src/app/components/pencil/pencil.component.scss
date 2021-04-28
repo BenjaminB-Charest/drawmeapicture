@@ -1,0 +1,22 @@
+@import '../../../global-style/dimensions.scss';
+
+#container {
+    color: black;
+    padding: 30px 40px;
+    padding-bottom: 0px;
+
+    .title {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .mat-slider {
+      margin-top: $slider-bubble-margin;
+      width: $slider-width;
+    }
+
+  }
+
+  ::ng-deep .mat-slider-ticks-container {
+    background-color: grey;
+  }

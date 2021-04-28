@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu_background"
+    tools:context=".MainMenuActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/logout_icon"
+        android:layout_alignBottom="@id/logout_icon"
+        android:layout_alignStart="@id/logout_icon"
+        android:layout_alignEnd="@id/logout_text"
+        android:background="@drawable/rounded_button_border_grey"/>
+
+    <ImageView
+        android:id="@+id/logout_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_logout"
+        android:padding="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"/>
+
+    <TextView
+        android:id="@+id/logout_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_alignTop="@+id/logout_icon"
+        android:layout_alignBottom="@id/logout_icon"
+        android:layout_toEndOf="@id/logout_icon"
+        android:text="@string/log_out"
+        android:textAllCaps="false"
+        android:textSize="24sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/money_background"
+        android:layout_alignTop="@+id/money_icon"
+        android:layout_alignBottom="@id/money_icon"
+        android:layout_alignStart="@id/money_icon"
+        android:layout_alignEnd="@id/money_value"/>
+
+    <ImageView
+        android:id="@+id/money_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:paddingHorizontal="10dp"
+        android:src="@drawable/ic_money"
+        android:layout_alignTop="@id/user_avatar_menu"
+        android:layout_toStartOf="@id/money_value"
+        android:onClick="moneyOnClickListener"/>
+
+    <TextView
+        android:id="@+id/money_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/user_avatar_menu"
+        android:text="0"
+        android:paddingHorizontal="10dp"
+        android:layout_alignTop="@id/user_avatar_menu"
+        android:layout_alignBottom="@id/money_icon"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:layout_marginEnd="30dp"
+        android:onClick="moneyOnClickListener"/>
+
+
+    <ImageView
+        android:id="@+id/user_avatar_menu"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_alignTop="@id/logout_text"
+        android:layout_alignBottom="@+id/user_info_menu"
+        android:clickable="true"
+        android:onClick="openUserProfile"
+        android:src="@drawable/empty_avatar"
+        android:layout_toStartOf="@+id/user_info_menu"
+        android:adjustViewBounds="true"
+        android:padding="2dp"
+        android:background="@drawable/white_round_border"/>
+    <RelativeLayout
+        android:id="@+id/user_info_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/logout_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="10dp"
+        android:paddingVertical="5dp">
+        <TextView
+            android:id="@+id/username_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="username"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:clickable="true"
+            android:onClick="openUserProfile"/>
+
+        <TextView
+            android:id="@+id/level_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level 0"
+            android:layout_below="@id/username_menu"
+            android:gravity="start"
+            android:textSize="16sp"
+            android:clickable="true"
+            android:onClick="openUserProfile"/>
+
+        <TextView
+            android:id="@+id/edit_profile_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit profile"
+            android:layout_below="@id/level_menu"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:onClick="openUserProfile"
+            android:textColor="@color/gray" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/logo_of_app"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/mainMenu"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/app_logo"/>
+
+
+    <LinearLayout
+        android:id="@+id/mainMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:paddingHorizontal="175dp">
+
+        <TextView
+            android:id="@+id/app_name"
+            android:text="Draw me a picture !"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="26sp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/classic_mode_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Classic Mode"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:background="@drawable/rounded_corners_empty_background"/>
+
+        <Button
+            android:id="@+id/solo_sprint_mode_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/colorAccentPale"
+            android:text="@string/sprint_solo"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:background="@drawable/rounded_corners_empty_background"/>
+
+        <Button
+            android:id="@+id/leaderboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Leaderboard"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:background="@drawable/rounded_corners_empty_background"/>
+        <Button
+            android:id="@+id/tutorial_main_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Tutorial"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:background="@drawable/rounded_corners_empty_background"/>
+
+    </LinearLayout>
+
+<ImageButton
+    android:id="@+id/chat_button_popup"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:src="@drawable/ic_chat"
+    android:padding="10dp"
+    android:scaleType="fitXY"
+    android:backgroundTint="@color/colorAccent"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
+    android:layout_marginBottom="40dp"
+    android:layout_marginEnd="40dp"
+    android:background="@drawable/rounded_corners_button_yellow"/>
+
+    <TextView
+        android:id="@+id/notification_popup"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignTop="@+id/chat_button_popup"
+        android:layout_alignEnd="@+id/chat_button_popup"
+        android:background="@drawable/round_notification"
+        android:backgroundTint="@color/redNotification"
+        android:gravity="center"
+        android:layout_marginTop="-5dp"
+        android:layout_marginEnd="-5dp"
+        android:visibility="visible"/>
+
+</RelativeLayout>

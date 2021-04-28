@@ -1,0 +1,18 @@
+.wrapper{
+    background-color: #c2eeee;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    .mat-card{
+        background-color: #d9f3f2;
+        width: 100%;
+        max-height: 230px;
+        overflow: auto;
+    }
+
+    button:focus, button:active:focus, button.active:focus{
+        outline: none !important;
+        outline-style: none !important;
+    }
+
+}

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Draw me a picture</string>
+    <string name="sprint_solo">Solo Sprint</string>
+    <string name="new_drawing">Create a new word-drawing pair</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="shop">Shop</string>
+    <string name="chat">Chat (Prototype)</string>
+    <string name="chatMessages">All messages will show up here</string>
+    <string name="enterChatMessage">Send a message</string>
+    <string name="sendButton">Send</string>
+    <string name="messagesButton">Messages</string>
+    <string name="informationButton">Information</string>
+    <string name="soundButton">Sound</string>
+    <string name="canvasButton">Canvas</string>
+    <string name="log_in">Log In</string>
+    <string name="log_out">Log Out</string>
+    <string name="classic_mode">Classic Mode</string>
+    <string name="tools">Tools</string>
+    <string name="give_hint">Give Hint</string>
+    <string name="more_colors">More colors</string>
+    <string name="leaderboard">leaderboard</string>
+    <string-array name="TimeFilter">
+        <item>Today</item>
+        <item>This week</item>
+        <item>This month</item>
+        <item>All time</item>
+    </string-array>
+    <string-array name="DifficultyChoices">
+        <item>easy</item>
+        <item>normal</item>
+        <item>hard</item>
+    </string-array>
+</resources>
